@@ -2,6 +2,11 @@ import Banner from '@/components/Banner';
 
 import { ChevronDown, Heart, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Now from '@/components/Now';
+import Special from '@/components/Special';
+import New from '@/components/New';
+import Comming from '@/components/Comming';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const openModal = () => {
@@ -39,6 +44,25 @@ const Home = () => {
             {/* <label htmlFor="" ><span>At?</span></label> */}
           </div>
         </div>
+        {/* Now showing */}
+        <section className="w-full h-[370px]">
+          <Now />
+        </section>
+        {/* Special&Events */}
+        <section className="w-full h-[370px]">
+          <Special />
+        </section>
+        <section className="overflow-x-auto w-full h-[400px] md:h-[500px]">
+          <New />
+        </section>
+        {/* Comming soon */}
+        <section className="w-full h-[370px]">
+          <Comming />
+        </section>
+        {/* Footer */}
+        <section className="w-full h-auto">
+          <Footer />
+        </section>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const Layout = () => {
         <img src="./assets/branch.png" alt="branch" />
       </div>
       <header
-        className="fixed flex bottom-0 lg:top-0  p-1 w-full
+        className="fixed flex bottom-0 md:top-0 md:bottom-full p-1 md:p-0 w-full
                         bg-gradient-to-t from-gray-900 to-gray-700
                         lg:bg-black/10 lg:bg-none lg:from-none lg:to-none
                          lg:h-[56px]  z-20"
