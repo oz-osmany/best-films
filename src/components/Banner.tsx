@@ -12,10 +12,10 @@ const Banner = () => {
       <div className="banner__content lg:w-[90%] lg:mx-auto">
         <div className="flex w-full">
           <div className="">
-            <h1 className="text-amber-500 text-shadow-lg text-5xl md:text-5xl font-bold mb-6">
+            <h1 className="text-amber-500 text-shadow-lg text-4xl md:text-5xl font-bold mb-6">
               Explore New Movies
             </h1>
-            <p className="text-amber-500 text-shadow-lg text-lg md:text-xl mb-6">
+            <p className="text-amber-500 text-shadow-lg text-md md:text-xl mb-6">
               Enjoy the best movies wherever you are.
             </p>
             <div className="flex">

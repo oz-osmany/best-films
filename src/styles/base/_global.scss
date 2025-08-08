@@ -41,3 +41,13 @@ h3 {
   //   color: variables.$brand-black;
   // }
 }
+.separador {
+    background: linear-gradient(transparent 0%, rgb(5 4 4) 25%, rgb(22 22 22) 45%, transparent 100%);
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: -219px;
+    opacity: 1;
+    height: 395px;
+    transition: opacity .7s cubic-bezier(.65,0,.35,1);
+    }
