@@ -1,0 +1,43 @@
+@use '../abstracts/variables';
+
+body {
+  font-family: variables.$font-base;
+  font-size: variables.$font-size-base;
+  line-height: variables.$lh-normal;
+  color: variables.$color-white;
+  background: variables.$gray-50;
+}
+h1 {
+  font-family: variables.$font-display;
+  font-size: variables.$font-size-lg;
+  line-height: variables.$lh-tight;
+}
+h2 {
+  font-family: variables.$font-display;
+  font-size: variables.$font-size-base;
+  line-height: variables.$lh-tight;
+}
+h3 {
+  font-family: variables.$font-display;
+  font-size: variables.$font-size-sm;
+  line-height: variables.$lh-snug;
+}
+// h4 { font-family: variables.$font-display; font-size: variables.$fs-2xl; line-height: variables.$lh-snug;  }
+
+.navbar {
+  background: variables.$color-primary;
+  color: variables.$color-white;
+  box-shadow: variables.$shadow-soft;
+
+  //   .navbar__cta {
+  //     @apply font-medium;
+  //     background: variables.$brand-yellow;
+  //     color: variables.$brand-black;
+
+  //     &:hover { background: variables.$accent-amber; }
+  //   }
+  // .badge--yellow {
+  //   background: variables.$brand-yellow;
+  //   color: variables.$brand-black;
+  // }
+}

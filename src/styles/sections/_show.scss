@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.show {
+  &__content {
+    @include mixins.content;
+  }
+
+  &__content-fix {
+    @include mixins.content-fix;
+  }
+}

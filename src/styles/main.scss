@@ -1,0 +1,17 @@
+@use 'sass:color';
+@use './abstracts/variables';
+@use './abstracts/mixins';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './base/global';
+
+@import './layout/nav';
+@import './layout/content';
+
+@import './sections/banner';
+@import './sections/show';
+
+@import './components/button';

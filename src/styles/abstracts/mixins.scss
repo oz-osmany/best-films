@@ -1,0 +1,38 @@
+@mixin content {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@mixin content-fix {
+  position: relative;
+  z-index: 1;
+}
+
+// @mixin content-full {
+//   max-width: 1920px;
+//   padding-left: 64px;
+//   padding-right: 64px;
+// }
+@media (min-width: 700px) {
+  .content {
+    /* width: 100%; */
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (min-width: 1080px) {
+  .content {
+    max-width: 1384px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (min-width: 1280px) {
+  .content {
+    max-width: 1920px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}

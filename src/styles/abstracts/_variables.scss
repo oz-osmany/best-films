@@ -1,0 +1,64 @@
+// abstracts/_variables.scss
+
+// 🎨 Color palette
+$color-primary: #111111;
+$color-yellow: #ffd200;
+$color-white: #ffffff;
+$color-primary-light: #dbeafe;
+$btn-color: rgb(64 67 68 / 64%);
+$color-text: #222222;
+// $color-success: #28a745;
+// $color-danger: #dc3545;
+
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-900: #111827;
+
+// 📐 Base spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+
+// ✍️ typography
+$font-base:
+  'Inter',
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  'Noto Sans',
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  sans-serif;
+$font-display: 'Inter', $font-base;
+$font-size-base: 16px;
+$font-size-lg: 20px;
+$font-size-sm: 14px;
+
+// 📱 Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+// Shadow
+$shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 6px 24px rgba(0, 0, 0, 0.12);
+
+//line height
+$lh-tight: 1.15;
+$lh-snug: 1.3;
+$lh-normal: 1.5;

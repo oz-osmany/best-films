@@ -1,0 +1,152 @@
+export const cinemas = [
+  {
+    id: 'cinema_1',
+    name: 'Filmpalast Berlin',
+    city: 'Berlin',
+    address: 'Hauptstraße 66, Berlin',
+    coordinates: {
+      lat: 50.0,
+      lng: 8.0,
+    },
+    chain: 'Cineplex',
+    contact: {
+      phone: '+49 30 1234056',
+      website: 'https://www.cinemaxx.de/berlin',
+    },
+  },
+  {
+    id: 'cinema_2',
+    name: 'Arthaus Kino Hamburg',
+    city: 'Hamburg',
+    address: 'Hauptstraße 84, Hamburg',
+    coordinates: {
+      lat: 50.2,
+      lng: 8.1,
+    },
+    chain: 'CinemaxX',
+    contact: {
+      phone: '+49 30 1234156',
+      website: 'https://www.cineplex.de/hamburg',
+    },
+  },
+  {
+    id: 'cinema_3',
+    name: 'CineStar München',
+    city: 'München',
+    address: 'Hauptstraße 4, München',
+    coordinates: {
+      lat: 50.4,
+      lng: 8.2,
+    },
+    chain: 'UCI Kinowelt',
+    contact: {
+      phone: '+49 30 1234256',
+      website: 'https://www.ucikinowelt.de/münchen',
+    },
+  },
+  {
+    id: 'cinema_4',
+    name: 'Luxor Köln',
+    city: 'Köln',
+    address: 'Hauptstraße 12, Köln',
+    coordinates: {
+      lat: 50.6,
+      lng: 8.3,
+    },
+    chain: 'UCI Kinowelt',
+    contact: {
+      phone: '+49 30 1234356',
+      website: 'https://www.arthauskino.de/köln',
+    },
+  },
+  {
+    id: 'cinema_5',
+    name: 'CinemaxX Frankfurt',
+    city: 'Frankfurt',
+    address: 'Hauptstraße 28, Frankfurt',
+    coordinates: {
+      lat: 50.8,
+      lng: 8.4,
+    },
+    chain: 'Arthaus Kino',
+    contact: {
+      phone: '+49 30 1234456',
+      website: 'https://www.luxor.de/frankfurt',
+    },
+  },
+  {
+    id: 'cinema_6',
+    name: 'UCI Kinowelt Stuttgart',
+    city: 'Stuttgart',
+    address: 'Hauptstraße 40, Stuttgart',
+    coordinates: {
+      lat: 51.0,
+      lng: 8.5,
+    },
+    chain: 'UCI Kinowelt',
+    contact: {
+      phone: '+49 30 1234556',
+      website: 'https://www.cinestar.de/stuttgart',
+    },
+  },
+  {
+    id: 'cinema_7',
+    name: 'CinemaxX Düsseldorf',
+    city: 'Düsseldorf',
+    address: 'Hauptstraße 20, Düsseldorf',
+    coordinates: {
+      lat: 51.2,
+      lng: 8.6,
+    },
+    chain: 'Arthaus Kino',
+    contact: {
+      phone: '+49 30 1234656',
+      website: 'https://www.filmpalast.de/düsseldorf',
+    },
+  },
+  {
+    id: 'cinema_8',
+    name: 'UCI Kinowelt Dresden',
+    city: 'Dresden',
+    address: 'Hauptstraße 36, Dresden',
+    coordinates: {
+      lat: 51.4,
+      lng: 8.7,
+    },
+    chain: 'UCI Kinowelt',
+    contact: {
+      phone: '+49 30 1234756',
+      website: 'https://www.cinemaxx.de/dresden',
+    },
+  },
+  {
+    id: 'cinema_9',
+    name: 'UCI Kinowelt Leipzig',
+    city: 'Leipzig',
+    address: 'Hauptstraße 60, Leipzig',
+    coordinates: {
+      lat: 51.6,
+      lng: 8.8,
+    },
+    chain: 'Luxor',
+    contact: {
+      phone: '+49 30 1234856',
+      website: 'https://www.cineplex.de/leipzig',
+    },
+  },
+  {
+    id: 'cinema_10',
+    name: 'Filmpalast Hannover',
+    city: 'Hannover',
+    address: 'Hauptstraße 1, Hannover',
+    coordinates: {
+      lat: 51.8,
+      lng: 8.9,
+    },
+    chain: 'Luxor',
+    contact: {
+      phone: '+49 30 1234956',
+      website: 'https://www.ucikinowelt.de/hannover',
+    },
+  },
+];

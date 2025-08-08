@@ -1,0 +1,27 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.banner {
+  background-image: url('https://media.themoviedb.org/t/p/w300_and_h450_multi_faces/qerflS8AU23XopttgDFBsbe1L0D.jpg');
+  background-size: cover;
+  background-position: center;
+  @media (min-width: 640px) {
+    .banner {
+      background-image: url('https://media.themoviedb.org/t/p/w600_and_h900_multi_faces/qerflS8AU23XopttgDFBsbe1L0D.jpg');
+    }
+  }
+
+  @media (min-width: 768px) {
+    .banner {
+      background-image: url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/s94NjfKkcSczZ1FembwmQZwsuwY.jpg');
+    }
+  }
+
+  &__content {
+    @include mixins.content;
+  }
+
+  &__content-fix {
+    @include mixins.content-fix;
+  }
+}
