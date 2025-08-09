@@ -10,9 +10,7 @@ const Special = () => {
       <h1 className="title mb-[5px]">Special&Events</h1>
       <Carousels data={showing} />
       <div>
-        <Button className="w-full h-[48px] mb-[50px] bg-[#bdabab42] lg:hidden">
-          All specials
-        </Button>
+        <Button className="w-full h-[48px] mb-[50px] bg-[#bdabab42] lg:hidden">All specials</Button>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Nav from './Nav';
 const Layout = () => {
   return (
     <div className="min-h-screen bg-[linear-gradient(to_bottom,_#121212_0%,_#1a1a1a_500px,_#000_100%)]">
-      <div className="w-[50px] lg:w-[60px] h-auto absolute left-[25px] z-10 top-[6px]">
+      <div className="w-[40px] md:w-[50px] lg:w-[60px] h-auto absolute left-[25px] z-10 top-[6px]">
         <img src="./assets/branch.png" alt="branch" />
       </div>
       <header
