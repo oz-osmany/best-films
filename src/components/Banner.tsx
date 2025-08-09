@@ -9,7 +9,7 @@ const Banner = () => {
       className="relative bottom-[70px] md:bottom-0 z-10 flex flex-col items-center
             justify-end md:justify-center h-full text-center"
     >
-      <div className="banner__content lg:w-[90%] lg:mx-auto">
+      <div className="show__content lg:w-[90%] lg:mx-auto">
         <div className="flex w-full">
           <div className="">
             <h1 className="text-amber-500 text-shadow-lg text-4xl md:text-5xl font-bold mb-6">
