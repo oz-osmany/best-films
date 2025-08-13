@@ -1,8 +1,8 @@
 import Layout from '@/components/Layout';
 // import Cinema from '@/pages/Cinema';
 // import Club from '@/pages/Club';
-// import Details from '@/pages/Details';
 import Home from '@/pages/Home';
+import Movies from '@/pages/Movies';
 import { Route, Routes } from 'react-router';
 
 const Routess = () => {
@@ -11,9 +11,9 @@ const Routess = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* <Route path="/cinema" element={<Cinema />} />
-          <Route path="/details" element={<Details />} />
-          <Route path="/club" element={<Club />} /> */}
+          {/* <Route path="/cinema" element={<Cinema />} /> */}
+          <Route path="/movies/:id" element={<Movies />} />
+          {/* <Route path="/club" element={<Club />} /> */}
         </Route>
       </Routes>
     </>

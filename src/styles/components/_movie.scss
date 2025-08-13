@@ -1,0 +1,22 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.movie {
+    width: 100%;
+    @include mixins.content;
+    @apply relative flex flex-col justify-center items-center  h-full py-16;
+
+     @media (min-width: 1024px){
+        justify-content: start;
+        align-items: flex-start;
+        // margin: 0;
+     }
+
+     &__btn{
+        @apply btn w-[49%] flex justify-center items-center;
+
+        @media (min-width: 1024px) {
+            width: 200px;
+        }
+     }
+}

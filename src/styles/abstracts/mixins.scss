@@ -4,6 +4,18 @@
   margin-left: auto;
   padding-left: 16px;
   padding-right: 16px;
+
+  @media (min-width:700px){
+    max-width: 770px;
+  }
+  @media (min-width:1280px) and (max-width:1319px){
+    max-width: 1280px;
+  }
+  @media (min-width:1320px){
+    max-width: 1384px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 @mixin content-fix {
   position: relative;
