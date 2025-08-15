@@ -1,0 +1,10 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.cards {
+
+    &__name {
+        font-size: variables.$font-size-sm;
+        margin-left: 4px;
+    }
+}

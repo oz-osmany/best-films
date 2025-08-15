@@ -1,5 +1,4 @@
 import React from 'react';
-import api from '../api/api';
 import { Button } from './ui/button';
 import { Plus, Ticket } from 'lucide-react';
 import BookNow from './BookNow';

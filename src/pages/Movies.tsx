@@ -1,4 +1,4 @@
-import { cinemas } from '@/api/cinemas';
+import { cinemas } from '../api/cinemas';
 import { showing } from '@/api/movies';
 import { Cinema, cinema, DayName } from '@/api/typeCinema';
 import BookNow from '@/components/BookNow';
@@ -9,11 +9,30 @@ import { Button } from '@/components/ui/button';
 import { Filter, ListTodo, SlidersHorizontal, ThumbsUp } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Movie } from '../api/info';
+import { Result } from '@/api/type';
+import { PelisId } from '@/api/api';
+import { Todo } from '@/api/Information';
 
 type DayNames = keyof typeof cinema.list;
 const Movies = () => {
   const { id } = useParams();
   const [selected, setSelected] = useState<string | null>(null);
+      const [film, setFilm] = useState<Todo>()
+
+
+  useEffect(() => {
+    const detailMovie = async () =>{
+      if(id){
+        const resp = await PelisId(parseInt(id));
+        setFilm(resp);
+
+      }
+    }
+    detailMovie();
+  }, [])
+  
+
 
   const checkDay = (cinemaId: string, day: DayNames) => {
     const found = cinemas.find((c) => c.id === cinemaId);
@@ -28,7 +47,7 @@ const Movies = () => {
       <div
         className="absolute right-0 w-full lg:w-[65%] h-[300px] lg:h-[600px]"
         style={{
-          backgroundImage: `url(${filterMovie?.poster_url})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${film?.backdrop_path})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -65,7 +84,7 @@ const Movies = () => {
         <div className="content  mb-4">
           <Search />
         </div>
-        <div className="content block md:hidden">
+        <div className="content relative block md:hidden">
           <BookNow plus={false} />
         </div>
         {/* Schedule */}
