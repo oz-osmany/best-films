@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Link } from 'react-router-dom';
 
 const Cards = ({ poster_url, title, id }: Movie) => {
-  
   return (
     <div className="p-1">
       <Card className="w-[150px] h-[200px]">

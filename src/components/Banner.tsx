@@ -19,7 +19,7 @@ const Banner = () => {
             <p className="text-amber-500 text-shadow-lg text-md md:text-xl mb-6">
               Enjoy the best movies wherever you are.
             </p>
-            <BookNow  />
+            <BookNow plus={true} />
           </div>
         </div>
       </div>

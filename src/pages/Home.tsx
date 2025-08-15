@@ -14,13 +14,10 @@ import Search from '@/components/Search';
 
 ReactModal.setAppElement('#root');
 const Home = () => {
-  
-
-  
   return (
     <div>
       <section className="banner relative z-0 h-[544px] md:h-[580px] xl:h-[780px] w-full">
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        <div className="gradient"></div>
         <Banner />
         <div className="separador"></div>
       </section>

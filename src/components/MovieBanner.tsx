@@ -1,7 +1,6 @@
-
-import React from 'react'
-import { Button } from './ui/button'
-import { Ticket } from 'lucide-react'
+import React from 'react';
+import { Button } from './ui/button';
+import { Ticket } from 'lucide-react';
 
 const MovieBanner = () => {
   return (
@@ -30,7 +29,7 @@ const MovieBanner = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MovieBanner
+export default MovieBanner;
