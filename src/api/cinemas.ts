@@ -13,6 +13,16 @@ export const cinemas = [
       phone: '+49 30 1234056',
       website: 'https://www.cinemaxx.de/berlin',
     },
+    list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
+    },
   },
   {
     id: 'cinema_2',
@@ -28,6 +38,16 @@ export const cinemas = [
       phone: '+49 30 1234156',
       website: 'https://www.cineplex.de/hamburg',
     },
+    list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
+    },
   },
   {
     id: 'cinema_3',
@@ -42,6 +62,16 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234256',
       website: 'https://www.ucikinowelt.de/münchen',
+    },
+    list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {

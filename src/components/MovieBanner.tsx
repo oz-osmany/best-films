@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Plus, Ticket } from 'lucide-react';
-import BookNow from './BookNow';
+import { Ticket } from 'lucide-react';
 
-const Banner = () => {
+const MovieBanner = () => {
   return (
     <div
       className="relative bottom-[70px] md:bottom-0 z-10 flex flex-col items-center
@@ -18,7 +17,14 @@ const Banner = () => {
             <p className="text-amber-500 text-shadow-lg text-md md:text-xl mb-6">
               Enjoy the best movies wherever you are.
             </p>
-            <BookNow plus={true} />
+            <div className="flex">
+              <Button className="h-[50px] px-[20px] w-full max-w-[400px] bg-yellow-400 text-black  font-semibold rounded">
+                <Ticket /> Book now
+              </Button>
+              {/* <Button className="h-[50px] ml-2 btn">
+                <Plus />
+              </Button> */}
+            </div>
           </div>
         </div>
       </div>
@@ -26,4 +32,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default MovieBanner;

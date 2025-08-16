@@ -98,10 +98,41 @@ h3 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -219px;
+  bottom: -217px;
   opacity: 1;
   height: 395px;
   transition: opacity 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.title {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.content {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 700px) {
+  .content {
+    max-width: 770px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1319px) {
+  .content {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1320px) {
+  .content {
+    max-width: 1384px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 .banner {
@@ -110,12 +141,12 @@ h3 {
   background-position: center;
 }
 @media (min-width: 640px) {
-  .banner .banner {
+  .banner {
     background-image: url('https://media.themoviedb.org/t/p/w600_and_h900_multi_faces/qerflS8AU23XopttgDFBsbe1L0D.jpg');
   }
 }
 @media (min-width: 768px) {
-  .banner .banner {
+  .banner {
     background-image: url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/s94NjfKkcSczZ1FembwmQZwsuwY.jpg');
   }
 }
@@ -126,9 +157,32 @@ h3 {
   padding-left: 16px;
   padding-right: 16px;
 }
+@media (min-width: 700px) {
+  .banner__content {
+    max-width: 770px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1319px) {
+  .banner__content {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1320px) {
+  .banner__content {
+    max-width: 1384px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
 .banner__content-fix {
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .gradient {
+    @apply absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent;
+  }
 }
 
 .show__content {
@@ -137,6 +191,23 @@ h3 {
   margin-left: auto;
   padding-left: 16px;
   padding-right: 16px;
+}
+@media (min-width: 700px) {
+  .show__content {
+    max-width: 770px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1319px) {
+  .show__content {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1320px) {
+  .show__content {
+    max-width: 1384px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 @media (min-width: 700px) {
   .show__content {
@@ -165,6 +236,9 @@ h3 {
 
 .btn {
   background-color: rgba(64, 67, 68, 0.64);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 7px;
 }
 
 .modal {
@@ -177,4 +251,53 @@ h3 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+.movie {
+  width: 100%;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  @apply relative z-20 flex flex-col justify-center items-center h-full py-16;
+}
+@media (min-width: 700px) {
+  .movie {
+    max-width: 770px;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1319px) {
+  .movie {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1320px) {
+  .movie {
+    max-width: 1384px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .movie {
+    justify-content: start;
+    align-items: flex-start;
+  }
+}
+.movie__btn {
+  @apply btn w-[49%] flex justify-center items-center;
+}
+@media (min-width: 1024px) {
+  .movie__btn {
+    width: 200px;
+  }
+}
+.movie__selected {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+.movie__setting {
+  @apply h-[40px] w-[120px] bg-gray-500 mr-3 px-3 shrink-0;
 } /*# sourceMappingURL=main.css.map */
