@@ -1,3 +1,10 @@
 /// <reference types="vite/client" />
 
-VITE_API_KEY='5a6504da9f668e20142f1c9708e5f356';
+interface ImportMetaEnv {
+  readonly VITE_API_URL: string;
+  readonly VITE_API_KEY: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}
