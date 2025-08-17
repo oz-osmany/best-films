@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import { ScrollToTop } from '@/components/ScrolltoTop';
 // import Cinema from '@/pages/Cinema';
 // import Club from '@/pages/Club';
 import Home from '@/pages/Home';
@@ -8,6 +9,7 @@ import { Route, Routes } from 'react-router';
 const Routess = () => {
   return (
     <>
+      <ScrollToTop  />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

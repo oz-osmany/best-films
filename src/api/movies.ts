@@ -1528,6 +1528,132 @@ export const news: Movie[] = [
       },
     ],
   },
+  {
+    id: 'm_23',
+    tmdb_id: 200012,
+    title: 'Film 13',
+    release_day: '2025-08-21',
+    duration: 119,
+    genre: ['Adventure', 'Sci-Fi'],
+    description: 'Film 13 ist ein spannender Film mit einem Hauch von Adventure und Sci-Fi.',
+    poster_url: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg',
+    backdrop_url: 'https://image.tmdb.org/t/p/w780/backdrop_200012.jpg',
+    cast: ['Schauspieler 1', 'Schauspieler 2', 'Schauspieler 3'],
+    crew: {
+      director: 'Regisseur 22',
+      writer: 'Drehbuchautor 22',
+    },
+    language: 'de',
+    rating: 'FSK 16',
+    in_cinemas: true,
+    streaming_available: true,
+    streaming_links: [
+      {
+        platform: 'Netflix',
+        url: 'https://www.plutotv.com/watch/200012',
+        type: 'rent',
+      },
+    ],
+    cinema_showtimes: [
+      {
+        cinema_id: 'cinema_2',
+        dates: [
+          {
+            date: '2025-07-25',
+            times: ['21:00', '17:00', '15:00'],
+          },
+          {
+            date: '2025-07-26',
+            times: ['15:00', '13:00', '19:00'],
+          },
+          {
+            date: '2025-07-27',
+            times: ['17:00', '15:00', '19:00'],
+          },
+        ],
+      },
+      {
+        cinema_id: 'cinema_5',
+        dates: [
+          {
+            date: '2025-07-25',
+            times: ['13:00', '15:00', '17:00'],
+          },
+          {
+            date: '2025-07-26',
+            times: ['13:00', '19:00', '21:00'],
+          },
+          {
+            date: '2025-07-27',
+            times: ['13:00', '19:00', '21:00'],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'm_23',
+    tmdb_id: 200012,
+    title: 'Film 13',
+    release_day: '2025-08-21',
+    duration: 119,
+    genre: ['Adventure', 'Sci-Fi'],
+    description: 'Film 13 ist ein spannender Film mit einem Hauch von Adventure und Sci-Fi.',
+    poster_url: 'https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg',
+    backdrop_url: 'https://image.tmdb.org/t/p/w780/backdrop_200012.jpg',
+    cast: ['Schauspieler 1', 'Schauspieler 2', 'Schauspieler 3'],
+    crew: {
+      director: 'Regisseur 22',
+      writer: 'Drehbuchautor 22',
+    },
+    language: 'de',
+    rating: 'FSK 16',
+    in_cinemas: true,
+    streaming_available: true,
+    streaming_links: [
+      {
+        platform: 'Netflix',
+        url: 'https://www.plutotv.com/watch/200012',
+        type: 'rent',
+      },
+    ],
+    cinema_showtimes: [
+      {
+        cinema_id: 'cinema_2',
+        dates: [
+          {
+            date: '2025-07-25',
+            times: ['21:00', '17:00', '15:00'],
+          },
+          {
+            date: '2025-07-26',
+            times: ['15:00', '13:00', '19:00'],
+          },
+          {
+            date: '2025-07-27',
+            times: ['17:00', '15:00', '19:00'],
+          },
+        ],
+      },
+      {
+        cinema_id: 'cinema_5',
+        dates: [
+          {
+            date: '2025-07-25',
+            times: ['13:00', '15:00', '17:00'],
+          },
+          {
+            date: '2025-07-26',
+            times: ['13:00', '19:00', '21:00'],
+          },
+          {
+            date: '2025-07-27',
+            times: ['13:00', '19:00', '21:00'],
+          },
+        ],
+      },
+    ],
+  },
 ];
 export const comming = [
   {
