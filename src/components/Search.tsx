@@ -16,11 +16,11 @@ const Search = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
 
+
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth > 1024);
     };
-
     // Check when assembling
     handleResize();
 
@@ -37,7 +37,7 @@ const Search = () => {
         document.body.classList.remove("overflow-hidden");
       }
     }, [modalIsOpen]);
-    
+
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -46,10 +46,10 @@ const Search = () => {
   };
 
   return (
-    <div className="lg:w-full lg:mx-auto ">
+    <div className="lg:mx-auto ">
       <div
         ref={searchRef}
-        className="relative z-30 md:z-40 pointer-events-auto flex w-full h-[48px] rounded-[8px] border border-solid"
+        className="relative z-30 md:z-40 pointer-events-auto flex w-full h-[48px] lg:h-[68px] rounded-[8px] border border-solid"
       >
         <input
           type="text"
@@ -58,6 +58,8 @@ const Search = () => {
           onClick={openModal}
           className="w-full pl-[54px] pr-[40px] py-2 bg-transparent cursor-pointer"
         />
+            
+
         <div className="flex mr-2 items-center justify-center h-full w-[40px] bg-transparent">
           <ChevronDown className="stroke-white" />
         </div>
@@ -68,14 +70,17 @@ const Search = () => {
           <Button className="px-4 h-[54px] btn mr-2">
             <Heart /> My cinema
           </Button>
+          
         </div>
       </div>
       {modalIsOpen ? (
-        isLargeScreen ? (
+        isLargeScreen ? 
+         (
           <div className="relative z-40 w-full bg-white shadow-lg max-h-[500px] overflow-y-scroll ">
             <Modal closeModal={closeModal} />
           </div>
-        ) : (
+        ) 
+        : (
           <ReactModal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

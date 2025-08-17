@@ -53,7 +53,7 @@ const Movies = () => {
         }}
       ></div>
       <div className="gradient"></div>
-      <div className="movie lg:mx-0">
+      <div className="movie">
         <div className="mb-4">
           <h1 className="title">{filterMovie?.title}</h1>
         </div>
@@ -113,7 +113,7 @@ const Movies = () => {
       </div>
       {/* Screen on this day */}
       <section className="relative block">
-        {days}
+        
         <NoFilms />
       </section>
       <section className="w-full h-auto">
