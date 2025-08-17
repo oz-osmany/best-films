@@ -1,9 +1,11 @@
+import { Result } from "./type";
+
 export type DayName = 'today' | 'tomorrow' | 'day1' | 'day2' | 'day3' | 'day4' | 'day5' | 'day6';
 
-// 2) Horarios por día
+// 2) Daily schedules
 export type Schedule = Record<DayName, string[]>;
 
-// 3) Tipos de apoyo
+// 3) Types of support
 export interface Coordinates {
   lat: number;
   lng: number;
@@ -14,7 +16,7 @@ export interface ContactInfo {
   website: string;
 }
 
-// 4) El cine
+// 4) cinema
 export interface Cinema {
   id: string;
   name: string;
@@ -50,7 +52,9 @@ export const cinema: Cinema = {
   },
 };
 
-// 6) Helper seguro para leer horarios por día
+// 6) Reliable helper for reading schedules by day
 export function getShowtimes(c: Cinema, day: DayName): string[] {
   return c.list[day];
 }
+
+export type CinemaWithMovies = Cinema & { movies: Result[] };

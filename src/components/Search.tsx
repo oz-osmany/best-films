@@ -4,13 +4,14 @@ import { Button } from './ui/button';
 import Modal from './Modal';
 import ReactModal from 'react-modal';
 import { cinemas } from '../api/cinemas';
+import { useCinemaStore } from '@/store/cinemaSotre';
 
 type Props = {
   openModal: () => void;
 };
 
 const Search = () => {
-  const [cinemas, setCinemas] = useState('Filmpalast Berlin');
+  const { selectedCinema} = useCinemaStore();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
@@ -31,7 +32,12 @@ const Search = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
+    useEffect(() => {
+      if (!modalIsOpen) {
+        document.body.classList.remove("overflow-hidden");
+      }
+    }, [modalIsOpen]);
+    
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -48,7 +54,7 @@ const Search = () => {
         <input
           type="text"
           name="search"
-          placeholder={cinemas}
+          placeholder={selectedCinema?.name}
           onClick={openModal}
           className="w-full pl-[54px] pr-[40px] py-2 bg-transparent cursor-pointer"
         />
@@ -75,7 +81,7 @@ const Search = () => {
             onRequestClose={closeModal}
             overlayClassName="fixed lg:left-0 inset-0 bg-black/50 flex justify-center items-center z-40"
             className="modal "
-            bodyOpenClassName="overflow-hidden"
+            bodyOpenClassName="overflow-hidden"       
           >
             <Modal closeModal={closeModal} />
           </ReactModal>

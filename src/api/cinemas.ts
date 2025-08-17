@@ -87,6 +87,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234356',
       website: 'https://www.arthauskino.de/köln',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {
@@ -102,6 +111,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234456',
       website: 'https://www.luxor.de/frankfurt',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {
@@ -117,6 +135,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234556',
       website: 'https://www.cinestar.de/stuttgart',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {
@@ -132,6 +159,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234656',
       website: 'https://www.filmpalast.de/düsseldorf',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {
@@ -147,6 +183,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234756',
       website: 'https://www.cinemaxx.de/dresden',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {
@@ -162,6 +207,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234856',
       website: 'https://www.cineplex.de/leipzig',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
   {
@@ -177,6 +231,15 @@ export const cinemas = [
     contact: {
       phone: '+49 30 1234956',
       website: 'https://www.ucikinowelt.de/hannover',
+    },list: {
+      today: ['13h', '15h', '17h'],
+      tomorrow: ['14h', '16h', '18h'],
+      day1: ['10h', '12h', '17h'],
+      day2: ['09h', '11h', '13h'],
+      day3: ['13h', '15h', '17h'],
+      day4: ['11h', '15h', '16h'],
+      day5: ['13h', '15h', '17h'],
+      day6: ['13h', '15h', '17h'],
     },
   },
 ];

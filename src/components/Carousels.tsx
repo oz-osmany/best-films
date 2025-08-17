@@ -9,21 +9,19 @@ import {
 import Cards from './Cards';
 import { InfoPeli, Result } from '@/api/type';
 import { showing } from '../api/movies';
+import { CinemaWithMovies } from '@/api/typeCinema';
 
 interface Results {
-  showing: Result[];
+  showing: CinemaWithMovies;
 }
 
-const Carousels = ({showing }: Results) => {
-
-  
+const Carousels = ({ showing }: Results) => {
   return (
     <Carousel className="w-full h-[250px] carousel">
       <CarouselContent className="">
-        {showing?.map( item => (
+        {showing?.movies.map( item => (
           <CarouselItem key={item.id} className="basis-1/2 md:basis-auto pl-2">
             <Cards {...item} />
-            <div className='cards__name w-[150px] h-[42px] overflow-hidden'> {item.title || item.name} </div>
           </CarouselItem>
         ))}
       </CarouselContent>

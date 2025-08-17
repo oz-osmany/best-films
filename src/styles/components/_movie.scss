@@ -27,4 +27,7 @@
   &__setting {
     @apply h-[40px] w-[120px] bg-gray-500 mr-3 px-3 shrink-0;
   }
+  &__sub::after{
+    content: ">";
+  }
 }
