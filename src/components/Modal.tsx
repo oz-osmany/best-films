@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { createPortal } from "react-dom";
 import { ChevronDown, Heart, MapPin, Search } from 'lucide-react';
 import { cinemas } from '../api/cinemas';
+import { useCinemaStore } from '@/store/cinemaSotre';
+import { Cinema } from '@/api/typeCinema';
 
-type Props = {
+type ModalProps = {
+  children?: ReactNode;
   closeModal: () => void;
 };
-const Modal = ({ closeModal }: Props) => {
-  return (
-    <>
+const Modal = ({ closeModal,children }: ModalProps) => {
+
+  const { selectCinema} = useCinemaStore();
+  const selection = ( item:Cinema ) =>{
+    closeModal();
+    selectCinema( item );
+  }
+  const modalRoot = document.getElementById("modal-root");
+  if (!modalRoot) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 bg-black/70 flex flex-col items-center justify-center z-50">
       <div className="sticky top-0 flex flex-col bg-white z-10 p-4 border-b flex justify-between items-center">
         <div className="flex justify-end w-full">
           <button onClick={closeModal} className="text-black hover:text-gray-700">
@@ -34,17 +47,18 @@ const Modal = ({ closeModal }: Props) => {
           <Heart className="text-black mx-3" /> <p className="text-black">My cinema</p>
         </div>
         <ul className="text-black p-4">
-          {cinemas.map((items) => {
+          {cinemas.map((item) => {
             return (
-              <li className="border-b border-gray-300">
-                <div className="font-medium text-sm">{items.name}</div>
-                <div className="text-gray-400 mb-3 text-xs">{items.city}</div>
+              <li className="border-b border-gray-300" key={item.id}>
+                <div className="font-medium text-sm" onClick={()=> selection(item)}>{item.name}</div>
+                <div className="text-gray-400 mb-3 text-xs">{item.city}</div>
               </li>
             );
           })}
         </ul>
       </div>
-    </>
+    </div>,
+    modalRoot
   );
 };
 

@@ -12,6 +12,7 @@ import {
 import Cards from './Cards';
 import { Card, CardHeader } from './ui/card';
 import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
 
 export interface InfoPeliWithTrailers extends InfoPeli {
   movieTrailers: Resultados[];
@@ -85,8 +86,8 @@ const Comming = () => {
         </CarouselContent>
     </Carousel>
 
-      <div className="flex flex-row">
-
+      <div>
+        <Button className="w-full h-[48px] mb-[50px] bg-[#bdabab42] lg:hidden">All specials</Button>
       </div>
     </div>
   );
