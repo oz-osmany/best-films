@@ -3,7 +3,7 @@
 
 .modal {
   @apply bg-gray-50 rounded-lg shadow-lg w-full md:max-w-2xl outline-none max-h-[80vh] flex flex-col overflow-hidden;
-  margin-top: 70px;  
+  margin-top: 70px;
   cursor: pointer;
   position: fixed;
 
@@ -14,13 +14,24 @@
     margin-right: auto;
     margin-top: 100px;
   }
-  @media (min-width: 1024px) {    
+  @media (min-width: 1024px) {
     max-width: 1900px !important;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
-  &__list :hover{
-  background-color: rgb(158, 183, 198);
-}
+  &__list :hover {
+    background-color: rgb(158, 183, 198);
+  }
+  &__schedule {
+    @apply bg-gray-50 rounded-lg shadow-lg w-full md:max-w-2xl outline-none h-screen flex flex-col overflow-hidden;
+
+    @media (min-width: 700px) {
+      margin-top: 0;
+      max-width: 1024px !important;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
 }

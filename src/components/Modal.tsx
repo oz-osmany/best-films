@@ -1,30 +1,27 @@
 import React, { ReactNode, useMemo, useState } from 'react';
-import { createPortal } from "react-dom";
-import { ChevronDown, Heart, MapPin, Search } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { Heart, MapPin, Search } from 'lucide-react';
 import { cinemas } from '../api/cinemas';
 import { useCinemaStore } from '@/store/cinemaSotre';
-import { Cinema } from '@/api/typeCinema';
+import { Cinema } from '@/types/typeCinema';
 
 type ModalProps = {
   children?: ReactNode;
   closeModal: () => void;
 };
-const Modal = ({ closeModal, }: ModalProps) => {
+const Modal = ({ closeModal }: ModalProps) => {
+  const [search, setSearch] = useState<string>('');
 
-  const [search, setSearch] = useState<string>("")
-
-  const { selectCinema} = useCinemaStore();
-  const selection = ( item:Cinema ) =>{
+  const { selectCinema } = useCinemaStore();
+  const selection = (item: Cinema) => {
     closeModal();
-    selectCinema( item );
-  }
-  const modalRoot = document.getElementById("modal-root");
+    selectCinema(item);
+  };
+  const modalRoot = document.getElementById('modal-root');
   if (!modalRoot) return null;
 
   const filterCinema = useMemo(() => {
-    return cinemas.filter(p =>
-      p.name.toLowerCase().includes(search.toLowerCase())
-    );
+    return cinemas.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()));
   }, [search]);
 
   return createPortal(
@@ -42,7 +39,7 @@ const Modal = ({ closeModal, }: ModalProps) => {
             <input
               type="search"
               value={search}
-              onChange={(e)=>setSearch(e.target.value)}
+              onChange={(e) => setSearch(e.target.value)}
               placeholder="Filmspalast, Berlin"
               className="w-[85%] h-[80%] bg-transparent pl-[10px]"
             />
@@ -55,12 +52,14 @@ const Modal = ({ closeModal, }: ModalProps) => {
         </div>
         <div className="flex items-center w-full h-[50px] bg-white mt-2">
           <Heart className="text-black mx-3" /> <p className="text-black">My cinema</p>
-        </div>        
+        </div>
         <ul className="modal__list text-black p-4">
           {filterCinema.map((item) => {
             return (
               <li className="border-b border-gray-300" key={item.id}>
-                <div className="font-medium text-sm" onClick={()=> selection(item)}>{item.name}</div>
+                <div className="font-medium text-sm" onClick={() => selection(item)}>
+                  {item.name}
+                </div>
                 <div className="text-gray-400 mb-3 text-xs">{item.city}</div>
               </li>
             );

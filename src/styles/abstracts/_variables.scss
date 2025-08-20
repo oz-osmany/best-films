@@ -5,7 +5,7 @@ $color-primary: #111111;
 $color-yellow: #ffd200;
 $color-white: #ffffff;
 $color-primary-light: #dbeafe;
-$btn-color: rgb(64 67 68 / 64%);
+$btn-color: rgb(64 67 68 / 88%);
 $color-text: #222222;
 // $color-success: #28a745;
 // $color-danger: #dc3545;
@@ -20,7 +20,6 @@ $gray-600: #4b5563;
 $gray-700: #374151;
 $gray-800: #1f2937;
 $gray-900: #111827;
-
 
 // 📐 Base spacing
 $spacing-xs: 0.25rem;
@@ -46,8 +45,10 @@ $font-base:
   sans-serif;
 $font-display: 'Inter', $font-base;
 $font-size-base: 16px;
-$font-size-lg: 20px;
 $font-size-sm: 14px;
+$font-size-md: 20px;
+$font-size-lg: 30px;
+$font-size-xl: 40px;
 
 // 📱 Breakpoints
 $bp-sm: 640px;

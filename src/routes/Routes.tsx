@@ -9,7 +9,7 @@ import { Route, Routes } from 'react-router';
 const Routess = () => {
   return (
     <>
-      <ScrollToTop  />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

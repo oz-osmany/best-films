@@ -1,6 +1,6 @@
 export const footerData = [
   {
-    title: 'Nu te zien',
+    title: 'Now showing',
     links: [
       'The Fantastic Four: First Steps',
       'The Naked Gun',
@@ -25,7 +25,7 @@ export const footerData = [
     links: [
       'Club Oz',
       'Subscriptions',
-      'Meer van Oz',
+      'More from Oz',
       'Specials & Events',
       'IMAX',
       '4DX',
