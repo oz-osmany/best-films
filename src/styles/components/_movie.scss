@@ -27,7 +27,11 @@
   &__setting {
     @apply h-[40px] w-[120px] bg-gray-500 mr-3 px-3 shrink-0;
   }
-  &__sub::after{
-    content: ">";
+  &__sub::after {
+    content: '>';
+  }
+
+  &__schedule {
+    @apply relative flex flex-1 items-center overflow-x-auto scroll-smooth h-[50px];
   }
 }
