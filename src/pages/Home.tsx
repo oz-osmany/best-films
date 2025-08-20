@@ -1,15 +1,10 @@
 import Banner from '@/components/Banner';
-
-import { ChevronDown, Heart, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import Now from '@/components/Now';
 import Special from '@/components/Special';
 import New from '@/components/New';
 import Comming from '@/components/Comming';
 import Footer from '../components/Footer';
-import { useEffect, useRef, useState } from 'react';
 import ReactModal from 'react-modal';
-import Modal from '../components/Modal';
 import Search from '@/components/Search';
 
 ReactModal.setAppElement('#root');

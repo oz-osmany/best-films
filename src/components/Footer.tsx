@@ -13,19 +13,18 @@ import { footerData } from '../helpers/infoFooter';
 const Footer = () => {
   const [isDesktop, setIsDesktop] = useState(false);
 
-  // Detectar cambios de tamaño de pantalla
+  // Detect screen size changes
   useEffect(() => {
     const checkScreenSize = () => {
       setIsDesktop(window.innerWidth >= 1280);
     };
 
-    // Comprobar al montar
     checkScreenSize();
 
-    // Escuchar cambios de tamaño
+    // Listen to size changes
     window.addEventListener('resize', checkScreenSize);
 
-    // Limpiar listener al desmontar
+    // Clean listener when disassembling
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
@@ -70,6 +69,7 @@ const Footer = () => {
                 {footerData.map((section, index) => (
                   <AccordionItem
                     value={`index-${index}`}
+                    key={index}
                     className="my-2 rounded-xl border-none py-2 px-4 bg-[#31292942]"
                   >
                     <AccordionTrigger className="text-white hover:no-underline">

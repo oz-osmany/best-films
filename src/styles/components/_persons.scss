@@ -1,0 +1,43 @@
+.persons {
+  width: 100%;
+  height: 400px;
+  box-sizing: border-box;
+
+  &__info {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+  &__info--detail {
+    flex-grow: 7;
+    // width: 75%;
+  }
+  &__imagen--detail {
+    flex-grow: 7;
+    // width: 25%;
+    padding: 0 20px;
+  }
+  &__interior {
+    display: flex;
+    // justify-content: center;
+    gap: 10px;
+  }
+  &__card {
+    width: 160px;
+    box-shadow: 5 10px 8px rgba(0, 0, 0, 0.1);
+  }
+  &__content {
+    width: 100%;
+    padding: 0 150px;
+    box-sizing: border-box;
+  }
+  &__title {
+    padding-left: 40px;
+  }
+  img {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    height: 220px;
+  }
+}

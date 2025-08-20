@@ -3,19 +3,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from './ui/button';
 import Modal from './Modal';
 import ReactModal from 'react-modal';
-import { cinemas } from '../api/cinemas';
 import { useCinemaStore } from '@/store/cinemaSotre';
 
-type Props = {
-  openModal: () => void;
-};
-
 const Search = () => {
-  const { selectedCinema} = useCinemaStore();
+  const { selectedCinema } = useCinemaStore();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,11 +26,11 @@ const Search = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-    useEffect(() => {
-      if (!modalIsOpen) {
-        document.body.classList.remove("overflow-hidden");
-      }
-    }, [modalIsOpen]);
+  useEffect(() => {
+    if (!modalIsOpen) {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [modalIsOpen]);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -58,7 +52,6 @@ const Search = () => {
           onClick={openModal}
           className="w-full pl-[54px] pr-[40px] py-2 bg-transparent cursor-pointer"
         />
-            
 
         <div className="flex mr-2 items-center justify-center h-full w-[40px] bg-transparent">
           <ChevronDown className="stroke-white" />
@@ -70,23 +63,20 @@ const Search = () => {
           <Button className="px-4 h-[54px] btn mr-2">
             <Heart /> My cinema
           </Button>
-          
         </div>
       </div>
       {modalIsOpen ? (
-        isLargeScreen ? 
-         (
+        isLargeScreen ? (
           <div className="relative z-40 w-full bg-white shadow-lg max-h-[500px] overflow-y-scroll ">
             <Modal closeModal={closeModal} />
           </div>
-        ) 
-        : (
+        ) : (
           <ReactModal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             overlayClassName="fixed lg:left-0 inset-0 bg-black/50 flex justify-center items-center z-40"
             className="modal "
-            bodyOpenClassName="overflow-hidden"       
+            bodyOpenClassName="overflow-hidden"
           >
             <Modal closeModal={closeModal} />
           </ReactModal>
