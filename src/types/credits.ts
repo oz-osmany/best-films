@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export interface Credits {
   id: number;
   cast: Cast[];
@@ -25,29 +24,6 @@ export interface Cast extends Person{
     order?:            number;
     department?:       DepartmentType;
     job?:              string;
-=======
-export interface Creditos {
-  id: number;
-  cast: Cast[];
-  crew: Cast[];
-}
-
-export interface Cast {
-  adult: boolean;
-  gender: number;
-  id: number;
-  known_for_department: DepartmentType;
-  name: string;
-  original_name: string;
-  popularity: number;
-  profile_path: null | string;
-  cast_id?: number;
-  character?: string;
-  credit_id: string;
-  order?: number;
-  department?: DepartmentType;
-  job?: string;
->>>>>>> main
 }
 
 export const Department = {
@@ -65,7 +41,6 @@ export const Department = {
   Writing: 'Writing',
 } as const;
 
-<<<<<<< HEAD
 export interface Person {
     adult:                boolean;
     also_known_as:        string[];
@@ -92,6 +67,3 @@ export const OriginalLanguage ={
 
 export type DepartmentType = (typeof Department)[keyof typeof Department];
 export type OriginalLanguageType  = (typeof OriginalLanguage)[keyof typeof OriginalLanguage];
-=======
-export type DepartmentType = (typeof Department)[keyof typeof Department];
->>>>>>> main
