@@ -21,7 +21,7 @@ const Special = () => {
   }, []);
   return (
     <div className="border-t-2 border-[#31292942] pt-[20px]">
-      <h1 className="title mb-[5px]">Special&Events</h1>
+      <h1 className="title mb-[20px]">Special&Events</h1>
       <p className="movie__sub text-[15px] text-gray-500 font-medium">in {selectedCinema?.name} </p>
 
       <Carousels showing={showing[0]} />

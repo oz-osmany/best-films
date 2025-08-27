@@ -22,11 +22,11 @@ const Details = ({ film, credit }: { film: UnionTypes; credit: Credits }) => {
         {credit.cast?.map((item) => {
           return (
             <SwiperSlide key={item.id}>
-              {item.poster_path && (
+              {item.profile_path && (
                 <div className="persons__card">
                   <Link to={`/persons/${item.id}`}>
                     <img
-                      src={`https://image.tmdb.org/t/p/w200${item.poster_path}`}
+                      src={`https://image.tmdb.org/t/p/w200/${item.profile_path}`}
                       alt=""
                       className="w-full"
                     />

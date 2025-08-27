@@ -34,10 +34,13 @@ const Persons = ()=> {
             }
             Detalle();
         }, [id])
+        console.log(credit?.biography.length)
     return(
         <section className="flex justify-center mt-[50px] lg:mt-[100px]">
             <div className="content">
-                <div className="flex flex-row">
+                {
+                    credit?.biography.length ? (
+                        <div className="flex flex-row">
                     <div className="w-[100px] md:w-[200px]">
                         <img src={`https://image.tmdb.org/t/p/w300${credit?.profile_path}`} alt="" className="!max-w-[300px] w-[100px] md:w-[200px]"/>
                     <div className="mt-4">
@@ -49,10 +52,10 @@ const Persons = ()=> {
                         <span className="text-sm md:text-md"> { credit?.gender===1?"Female":"Male"} </span>
                         </p>
                         <p className="text-sm md:text-md"><strong>Date of birth: </strong>
-                        <span className="text-sm md:text-md"> { credit?.birthday.toString()} </span>
+                        <span className="text-sm md:text-md"> { credit?.birthday.toString()? credit?.birthday.toString(): "No information"} </span>
                         </p>
                         <p className="text-sm md:text-md"><strong>Place of birth: </strong>
-                        <span className="text-sm md:text-md"> { credit?.place_of_birth} </span>
+                        <span className="text-sm md:text-md"> { credit?.place_of_birth ?credit?.place_of_birth : "No information"} </span>
                         </p>
                         <p className="text-sm md:text-md"><strong>Also known as: </strong>
                         <span className="text-sm md:text-md"> { credit?.also_known_as.map(item => {
@@ -116,6 +119,14 @@ const Persons = ()=> {
                         </section>
                     </div>
                 </div>
+                    ) 
+                    :
+                    <div>
+                        <h1>No information about this actor</h1>
+                        <p>go back</p>
+                    </div>
+                }
+                
 
             </div>
         </section>

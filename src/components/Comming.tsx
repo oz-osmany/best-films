@@ -49,13 +49,7 @@ const Comming = () => {
 
   return (
     <div className="border-t-2 border-[#31292942] pt-[20px]">
-      <h1 className="title mb-[5px]">Comming soon</h1>
-      {/* <Carousels showing={showing} />
-      <div>
-        <Button className="w-full h-[48px] mb-[50px] bg-[#bdabab42] lg:hidden">
-          All upcoming movies
-        </Button>
-      </div> */}
+      <h1 className="title mb-[20px]">Comming soon</h1>
       <Carousel className="w-full h-[250px] carousel">
         <CarouselContent className="">
           {movies?.map((item) => (

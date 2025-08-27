@@ -22,7 +22,7 @@ const Now = () => {
 
   return (
     <div className="pt-[20px]">
-      <h1 className="title ">Now showing</h1>
+      <h1 className="title mb-[8px]">Now showing</h1>
       <p className="movie__sub text-[15px] text-gray-500 font-medium">in {selectedCinema?.name} </p>
       <Carousels showing={showing[0]} />
       <div>
