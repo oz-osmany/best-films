@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Trend } from '@/api/api';
 import { CinemaWithMovies } from '@/types/typeCinema';
 import { assignMoviesToCinemas } from '@/helpers/mixer';
-import { useCinemaStore } from '@/store/cinemaSotre';
+import { useCinemaStore } from '@/store/cinemaStore';
 
 const Special = () => {
   const [showing, setShowing] = useState<CinemaWithMovies[]>([]);

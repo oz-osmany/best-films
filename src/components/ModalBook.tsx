@@ -1,14 +1,14 @@
-import { useCinemaStore } from '@/store/cinemaSotre';
+import { useCinemaStore } from '@/store/cinemaStore';
 import { useFilms } from '@/store/film';
 import BookNow from './BookNow';
 
-type Props = {
+type ModalBookProps = {
   closeMod: () => void;
   time: string;
   datum: string | null;
 };
 
-const ModalBook = ({ time, closeMod, datum }: Props) => {
+const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
   const { selectedFilm } = useFilms();
   const { selectedCinema } = useCinemaStore();
 

@@ -2,10 +2,10 @@
 
 export interface Type {
   id: number;
-  results: Resultado[];
+  results: OficialResult[];
 }
 
-export interface Resultado {
+export interface OficialResult {
   iso_639_1: string;
   iso_3166_1: string;
   name?: string;
@@ -92,7 +92,7 @@ export interface Result {
 
 export type MediaType = 'movie' | 'tv';
 
-export type Resultados = Resultado[];
+export type OficialResults = OficialResult[];
 export type Results = Result[];
 export type Genres = Genre[];
 export type InfoDetails = InfoDetail[];

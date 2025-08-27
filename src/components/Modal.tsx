@@ -2,7 +2,7 @@ import React, { ReactNode, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Heart, MapPin, Search } from 'lucide-react';
 import { cinemas } from '../api/cinemas';
-import { useCinemaStore } from '@/store/cinemaSotre';
+import { useCinemaStore } from '@/store/cinemaStore';
 import { Cinema } from '@/types/typeCinema';
 
 type ModalProps = {

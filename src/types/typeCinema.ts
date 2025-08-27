@@ -47,9 +47,4 @@ export const cinema: Cinema = {
   },
 };
 
-// 6) Reliable helper for reading schedules by day
-// export function getShowtimes(c: Cinema, day: DayName): string[] {
-//   return c.list[day];
-// }
-
 export type CinemaWithMovies = Cinema & { movies: Result[] };

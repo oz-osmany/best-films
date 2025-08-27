@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { InfoPeli, Result, Resultados } from '@/types/type';
+import { InfoPeli, OficialResult } from '@/types/type';
 import { Pelis, Trailer } from '@/api/api';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Card, CardHeader } from './ui/card';
@@ -7,18 +7,17 @@ import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 
 export interface InfoPeliWithTrailers extends InfoPeli {
-  movieTrailers: Resultados[];
+  movieTrailers: OficialResult[];
 }
 const Comming = () => {
-  // const [showing, setShowing] = useState<Result[]>([]);
 
   const [movies, setMovies] = useState<InfoPeliWithTrailers[]>([]);
 
   useEffect(() => {
-    const Escenas = async () => {
+    const Scenes = async () => {
       const films: InfoPeli = await Pelis();
       const videos = Object.values(films).map(async (item) => {
-        const videosRes: Resultados = await Trailer(item.id);
+        const videosRes: OficialResult[] = await Trailer(item.id);
         const now = new Date();
         const week = new Date();
         week.setDate(now.getDate() - 60);
@@ -45,7 +44,7 @@ const Comming = () => {
 
       setMovies(filtered);
     };
-    Escenas();
+    Scenes();
   }, []);
 
   return (
