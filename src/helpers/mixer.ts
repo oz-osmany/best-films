@@ -2,7 +2,7 @@ import { cinemas } from '@/api/cinemas';
 
 export const assignMoviesToCinemas = (movies: any[]) => {
   return cinemas.map((cinema) => {
-    // mezclar películas
+    // mix movies
     const shuffled = [...movies].sort(() => 0.5 - Math.random());
     // choose 5
     const assigned = shuffled.slice(0, 10);

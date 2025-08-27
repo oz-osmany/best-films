@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { days } from '@/api/days';
 import { cinemas } from '../api/cinemas';
-import { useCinemaStore } from '@/store/cinemaSotre';
+import { useCinemaStore } from '@/store/cinemaStore';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

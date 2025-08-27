@@ -1,4 +1,4 @@
-export interface Todo {
+export interface UnionTypes {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: null;

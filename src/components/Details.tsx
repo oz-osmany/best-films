@@ -1,4 +1,4 @@
-import { type Creditos } from '../types/creditos';
+import { type Creditos } from '../types/credits';
 import type { Todo } from '../types/Information';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';

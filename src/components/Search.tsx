@@ -3,13 +3,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from './ui/button';
 import Modal from './Modal';
 import ReactModal from 'react-modal';
-import { useCinemaStore } from '@/store/cinemaSotre';
+import { useCinemaStore } from '@/store/cinemaStore';
 
 const Search = () => {
   const { selectedCinema } = useCinemaStore();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1024);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -17,7 +17,7 @@ const Search = () => {
     };
     // Check when assembling
     handleResize();
-
+    
     // Listen for size changes
     window.addEventListener('resize', handleResize);
 

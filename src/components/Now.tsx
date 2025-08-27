@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Pelis } from '@/api/api';
 import { assignMoviesToCinemas } from '@/helpers/mixer';
 import { CinemaWithMovies } from '@/types/typeCinema';
-import { useCinemaStore } from '@/store/cinemaSotre';
+import { useCinemaStore } from '@/store/cinemaStore';
 
 const Now = () => {
   const [showing, setShowing] = useState<CinemaWithMovies[]>([]);
