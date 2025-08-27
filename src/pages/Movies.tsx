@@ -11,7 +11,7 @@ import { useCinemaStore } from '@/store/cinemaStore';
 import ModalBook from '@/components/ModalBook';
 import { useFilms } from '@/store/film';
 import ReactModal from 'react-modal';
-import { Creditos } from '@/types/credits';
+import { Credits } from '@/types/credits';
 import Details from '@/components/Details';
 import Days from '@/components/Days';
 
@@ -23,7 +23,7 @@ const Movies = () => {
   const [showSchedule, setShowSchedule] = useState<string[]>([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [time, setTime] = useState<string>('');
-  const [credit, setCredit] = useState<Creditos>();
+  const [credit, setCredit] = useState<Credits>();
   const [datum, setDatum] = useState<string | null>(null);
 
   // Talking about the crew
@@ -87,7 +87,7 @@ const Movies = () => {
                   return (
                     <a
                       href=""
-                      className="mt-0 text-sm md:text-lg lg:text-xl text-yellow-200"
+                      className="mt-0 text-sm md:text-lg lg:text-lg text-yellow-200"
                       key={index}
                     >
                       {item.name}
@@ -98,20 +98,20 @@ const Movies = () => {
               </span>
             </div>
             <div className="content !px-0">
-              <p className="text-sm md:text-lg lg:text-xl">
+              <p className="text-sm md:text-lg lg:text-lg">
                 Release day: {film?.release_date.toString()}{' '}
               </p>
-              <p className="text-[12px] md:text-lg lg:text-xl"> {film?.overview} </p>
+              <p className="text-[12px] md:text-lg lg:text-lg line-clamp-3"> {film?.overview} </p>
               <div className="flex gap-[5px] overflow-x-auto pt-4">
                 {filteredCrew?.map((item) => {
                   return (
                     <div style={{ color: 'white' }} key={item.id}>
-                      <div className="max-w-[60px] w-full mr-3">
-                        <p className="text-yellow-200 text-sm md:text-lg lg:text-xl">
+                      <div className="max-w-[68px] w-full mr-3">
+                        <p className="text-yellow-200 text-sm md:text-lg lg:text-lg">
                           {' '}
                           {item.job}{' '}
                         </p>
-                        <p className="text-sm md:text-md lg:text-lg"> {item.name} </p>
+                        <p className="text-sm md:text-md"> {item.name} </p>
                       </div>
                     </div>
                   );
