@@ -1,46 +1,58 @@
-import { cinemas } from '../api/cinemas';
-import { showing } from '@/api/movies';
-import { Cinema, cinema, DayName } from '@/api/typeCinema';
 import BookNow from '@/components/BookNow';
 import Footer from '@/components/Footer';
 import NoFilms from '@/components/NoFilms';
 import Search from '@/components/Search';
-import { Button } from '@/components/ui/button';
-import { Filter, ListTodo, SlidersHorizontal, ThumbsUp } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import { HeartPlus, ListTodo, SlidersHorizontal, ThumbsUp } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Movie } from '../api/info';
-import { Result } from '@/api/type';
-import { PelisId } from '@/api/api';
-import { Todo } from '@/api/Information';
+import { Credit, PelisId } from '@/api/api';
+import { UnionTypes } from '@/types/Information';
+import { useCinemaStore } from '@/store/cinemaStore';
+import ModalBook from '@/components/ModalBook';
+import { useFilms } from '@/store/film';
+import ReactModal from 'react-modal';
+import { Creditos } from '@/types/credits';
+import Details from '@/components/Details';
+import Days from '@/components/Days';
 
-type DayNames = keyof typeof cinema.list;
 const Movies = () => {
   const { id } = useParams();
-  const [selected, setSelected] = useState<string | null>(null);
-      const [film, setFilm] = useState<Todo>()
+  const { selectedCinema } = useCinemaStore();
+  const [film, setFilm] = useState<UnionTypes>();
+  const [check, setCheck] = useState<string[] | null>(null);
+  const [showSchedule, setShowSchedule] = useState<string[]>([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [time, setTime] = useState<string>('');
+  const [credit, setCredit] = useState<Creditos>();
+  const [datum, setDatum] = useState<string | null>(null);
 
+  // Talking about the crew
+  const jobs = ['Director', 'Screenplay', 'Producer', 'Writer'];
+  const filteredCrew = credit?.crew.filter((person) => person.job && jobs.includes(person.job));
+
+  const { selectFilm } = useFilms();
 
   useEffect(() => {
-    const detailMovie = async () =>{
-      if(id){
+    const detailMovie = async () => {
+      if (id) {
         const resp = await PelisId(parseInt(id));
+        const respuesta = await Credit(parseInt(id));
+
+        setCredit(respuesta);
         setFilm(resp);
-
+        selectFilm(resp);
       }
-    }
+    };
     detailMovie();
-  }, [])
-  
-
-
-  const checkDay = (cinemaId: string, day: DayNames) => {
-    const found = cinemas.find((c) => c.id === cinemaId);
-    return found?.list ? found.list[day] : [];
+  }, []);
+  const openMod = (item: string) => {
+    setTime(item);
+    setModalIsOpen(true);
   };
-
-  const days: DayName[] = ['today', 'tomorrow', 'day1', 'day2', 'day3', 'day4', 'day5', 'day6'];
-  const filterMovie = showing.find((item) => item.id === id);
+  const closeMod = () => {
+    document.body.classList.remove('overflow-hidden');
+    setModalIsOpen(false);
+  };
 
   return (
     <div className="relative z-0 h-[56%] md:h-[400px] lg:h-[580px] w-full">
@@ -53,28 +65,59 @@ const Movies = () => {
         }}
       ></div>
       <div className="gradient"></div>
-      <div className="movie">
-        <div className="mb-4">
-          <h1 className="title">{filterMovie?.title}</h1>
-        </div>
-        <div className="flex justify-between lg:justify-start w-full">
-          <button className="movie__btn lg:mr-2">
-            <ListTodo className="mr-2 w-[20px]" />
-            <span className="text-[16px] lg:text-[16px] font-bold"> My watchlist</span>
-          </button>
-          <button className="movie__btn">
-            <ThumbsUp className="mr-2 w-[20px]" />
-            <span className="text-[16px] lg:text-[16px] font-bold">Rate</span>
-          </button>
-        </div>
-        <div className="flex flex-col items-start w-full">
-          <div>
-            <p>Informaciones como like</p>
+      <div className="movie lg:pt-[10rem]">
+        <div className="flex flex-col w-full lg:w-[50%]">
+          <div className="mb-4">
+            <h1 className="title">{film?.title}</h1>
           </div>
-          <div>
-            <p>Release day: {filterMovie?.release_day} </p>
-            <p> {filterMovie?.description} </p>
-            <p>Infos, trailers & details</p>
+          <div className="flex justify-between lg:justify-start w-full">
+            <button className="movie__btn lg:mr-2">
+              <ListTodo className="mr-2 w-[20px]" />
+              <span className="text-[16px] lg:text-[18px] font-bold"> My watchlist</span>
+            </button>
+            <button className="movie__btn">
+              <ThumbsUp className="mr-2 w-[20px]" />
+              <span className="text-[16px] lg:text-[18px] font-bold">Rate</span>
+            </button>
+          </div>
+          <div className="flex flex-col items-start w-full">
+            <div>
+              <span className="genre">
+                {film?.genres.map((item, index) => {
+                  return (
+                    <a
+                      href=""
+                      className="mt-0 text-sm md:text-lg lg:text-xl text-yellow-200"
+                      key={index}
+                    >
+                      {item.name}
+                      {index < film.genres.length - 1 && ',' + ' '}
+                    </a>
+                  );
+                })}
+              </span>
+            </div>
+            <div className="content !px-0">
+              <p className="text-sm md:text-lg lg:text-xl">
+                Release day: {film?.release_date.toString()}{' '}
+              </p>
+              <p className="text-[12px] md:text-lg lg:text-xl"> {film?.overview} </p>
+              <div className="flex gap-[5px] overflow-x-auto pt-4">
+                {filteredCrew?.map((item) => {
+                  return (
+                    <div style={{ color: 'white' }} key={item.id}>
+                      <div className="max-w-[60px] w-full mr-3">
+                        <p className="text-yellow-200 text-sm md:text-lg lg:text-xl">
+                          {' '}
+                          {item.job}{' '}
+                        </p>
+                        <p className="text-sm md:text-md lg:text-lg"> {item.name} </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,34 +130,53 @@ const Movies = () => {
         <div className="content relative block md:hidden">
           <BookNow plus={false} />
         </div>
+        {film && credit && <Details {...{ film, credit }} />}
         {/* Schedule */}
-        <div className="content flex items-center w-[720px] gap-[12px] p-3 ">
+        <div className="content flex items-center w-[720px] gap-[3px] p-3 ">
           <div className="flex items-center btn h-[40px] px-4">
             <SlidersHorizontal />
           </div>
-          <div className="relative flex flex-1 items-center overflow-x-auto no-scrollbar scroll-smooth h-[50px]">
-            <div className="flex flex-nowrap gap-[1px] items-center transition-transform duration-300 ease-out">
-              {days.map((item) => {
-                return (
-                  <Button
-                    className={
-                      selected === item ? 'btn movie__selected movie_setting' : 'btn movie__setting'
-                    }
-                    onClick={() => checkDay('Filmpalast Berlin', item)}
-                  >
-                    {' '}
-                    {item}
-                  </Button>
-                );
-              })}
-            </div>
+          <div className="content !px-0 overflow-hidden">
+            <Days setShowSchedule={setShowSchedule} setCheck={setCheck} />
           </div>
         </div>
       </div>
       {/* Screen on this day */}
-      <section className="relative block">
-        
-        <NoFilms />
+      <section className="content relative block">
+        {showSchedule?.length !== 0 && (
+          <div className="flex my-8">
+            <HeartPlus className="btn w-[40px] h-[40px]" />
+            <div className="ml-4">
+              <p>{selectedCinema?.name}</p>
+              <p>{selectedCinema?.address}</p>
+            </div>
+          </div>
+        )}
+
+        <div className="flex gap-4">
+          {check?.map((item, index) => {
+            return (
+              <div className="btn__schedule" onClick={() => openMod(item)} key={index}>
+                {' '}
+                {item}{' '}
+              </div>
+            );
+          })}
+        </div>
+        {/* If there are not schedules show Ticket */}
+        {showSchedule?.length === 0 && <NoFilms />}
+        {/* Modal for booking */}
+        {modalIsOpen && (
+          <ReactModal
+            isOpen={modalIsOpen}
+            onRequestClose={closeMod}
+            overlayClassName="test fixed inset-0 lg:inset-auto lg:right-0 lg:top-0 lg:w-[400px] bg-black/50 flex justify-center items-center z-40"
+            className="modal__schedule "
+            bodyOpenClassName="overflow-hidden"
+          >
+            <ModalBook time={time} closeMod={closeMod} datum={datum} />
+          </ReactModal>
+        )}
       </section>
       <section className="w-full h-auto">
         <Footer />

@@ -6,4 +6,9 @@
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 7px;
+
+  &__schedule {
+    @apply text-white rounded-[7px] w-[150px] h-[150px] bg-gray-500 text-[25px] font-bold flex items-end;
+    padding-left: 13px;
+  }
 }

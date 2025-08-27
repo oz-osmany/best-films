@@ -1,9 +1,4 @@
-import { Result } from "./type";
-
-export type DayName = 'today' | 'tomorrow' | 'day1' | 'day2' | 'day3' | 'day4' | 'day5' | 'day6';
-
-// 2) Daily schedules
-export type Schedule = Record<DayName, string[]>;
+import { Result } from './type';
 
 // 3) Types of support
 export interface Coordinates {
@@ -25,7 +20,7 @@ export interface Cinema {
   coordinates: Coordinates;
   chain: string;
   contact: ContactInfo;
-  list: Schedule;
+  list: Record<string, string[]>;
 }
 
 // 5) Objeto tipado
@@ -51,10 +46,5 @@ export const cinema: Cinema = {
     day6: ['13h', '15h', '17h'],
   },
 };
-
-// 6) Reliable helper for reading schedules by day
-export function getShowtimes(c: Cinema, day: DayName): string[] {
-  return c.list[day];
-}
 
 export type CinemaWithMovies = Cinema & { movies: Result[] };
