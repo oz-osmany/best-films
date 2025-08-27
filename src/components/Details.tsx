@@ -1,12 +1,12 @@
 import { type Creditos } from '../types/credits';
-import type { Todo } from '../types/Information';
+import type { UnionTypes } from '../types/Information';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
-const Details = ({ film, credit }: { film: Todo; credit: Creditos }) => {
+const Details = ({ film, credit }: { film: UnionTypes; credit: Creditos }) => {
   return (
     <div className="content py-8">
       <Swiper
