@@ -41,6 +41,7 @@ const Movies = () => {
         setCredit(respuesta);
         setFilm(resp);
         selectFilm(resp);
+        
       }
     };
     detailMovie();
@@ -53,7 +54,6 @@ const Movies = () => {
     document.body.classList.remove('overflow-hidden');
     setModalIsOpen(false);
   };
-
   return (
     <div className="relative z-0 h-[56%] md:h-[400px] lg:h-[580px] w-full">
       <div

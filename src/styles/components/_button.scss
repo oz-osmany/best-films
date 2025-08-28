@@ -11,4 +11,7 @@
     @apply text-white rounded-[7px] w-[150px] h-[150px] bg-gray-500 text-[25px] font-bold flex items-end;
     padding-left: 13px;
   }
+  &__booking:hover {
+      background-color: rgb(212, 212, 106) !important;
+  }
 }
