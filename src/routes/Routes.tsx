@@ -1,5 +1,7 @@
 import Layout from '@/components/Layout';
+import LayoutBooking from '@/components/LayoutBooking';
 import { ScrollToTop } from '@/components/ScrolltoTop';
+import Ticket from '@/components/Ticket';
 import Booking from '@/pages/Booking';
 // import Cinema from '@/pages/Cinema';
 // import Club from '@/pages/Club';
@@ -17,7 +19,10 @@ const Routess = () => {
           <Route index element={<Home />} />
           <Route path="/movies/:id" element={<Movies />} />
           <Route path="/persons/:id" element={<Persons />} />
-          <Route path="/booking/:id" element={<Booking />} />
+        </Route>
+        <Route path="/booking/" element={<LayoutBooking />}>
+          <Route path="/booking/seat/:id" element={<Booking />} />
+          <Route path="/booking/ticket/:id" element={<Ticket />} />
         </Route>
       </Routes>
     </>

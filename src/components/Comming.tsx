@@ -10,7 +10,6 @@ export interface InfoPeliWithTrailers extends InfoPeli {
   movieTrailers: OficialResult[];
 }
 const Comming = () => {
-
   const [movies, setMovies] = useState<InfoPeliWithTrailers[]>([]);
 
   useEffect(() => {

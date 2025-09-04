@@ -61,8 +61,7 @@ const Footer = () => {
                       </ul>
                     </div>
                   ))}
-                </div>
-                    
+                </div>               
               </footer>
             ) : (
               <Accordion type="multiple" className="bg-transparent">

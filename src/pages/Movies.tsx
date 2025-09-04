@@ -41,7 +41,6 @@ const Movies = () => {
         setCredit(respuesta);
         setFilm(resp);
         selectFilm(resp);
-        
       }
     };
     detailMovie();
