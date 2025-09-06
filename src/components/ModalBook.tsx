@@ -1,6 +1,9 @@
 import { useCinemaStore } from '@/store/cinemaStore';
 import { useFilms } from '@/store/film';
 import BookNow from './BookNow';
+import { Link } from 'react-router-dom';
+import { useSchedule } from '@/store/schedule';
+import { useEffect } from 'react';
 
 type ModalBookProps = {
   closeMod: () => void;
@@ -11,6 +14,15 @@ type ModalBookProps = {
 const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
   const { selectedFilm } = useFilms();
   const { selectedCinema } = useCinemaStore();
+  const { selectTime } = useSchedule();
+
+  useEffect(() => {
+    const select = () => {
+      selectTime(time);
+    };
+
+    select();
+  }, []);
 
   return (
     <div className="w-full h-[50px] bg-black">
@@ -50,7 +62,9 @@ const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
               </div>
             </div>
             <div className="w-full">
-              <BookNow plus={false} />
+              <Link to={`/booking/seat/${selectedFilm?.id}`}>
+                <BookNow plus={false} />
+              </Link>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
-const Details = ({ film, credit }: { film: UnionTypes; credit: Credits }) => {
+const Details = ({ credit }: { credit: Credits }) => {
   return (
     <div className="content py-8">
       <Swiper

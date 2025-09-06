@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { days } from '@/api/days';
+import { days } from '../api/days';
 import { cinemas } from '../api/cinemas';
 import { useCinemaStore } from '@/store/cinemaStore';
 
@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { useSchedule } from '@/store/schedule';
 
 type Props = {
   setCheck: (check: string[]) => void;
@@ -19,6 +20,7 @@ const Days = ({ setShowSchedule, setCheck }: Props) => {
 
   const [selected, setSelected] = useState<string | null>(null);
   const [datum, setDatum] = useState<string | null>(null);
+  const { selectDay } = useSchedule();
 
   const parseCustomDate = (input: string): string => {
     const monthMap: Record<string, string> = {
@@ -44,6 +46,7 @@ const Days = ({ setShowSchedule, setCheck }: Props) => {
 
   const checkDay = (datum: string) => {
     setDatum(datum);
+    selectDay(datum);
 
     const found = cinemas.find((c) => c.name === selectedCinema?.name);
     const item = parseCustomDate(datum);
@@ -52,6 +55,7 @@ const Days = ({ setShowSchedule, setCheck }: Props) => {
     setCheck(resp);
     setShowSchedule(resp);
   };
+
   return (
     <Swiper
       className="swiper"

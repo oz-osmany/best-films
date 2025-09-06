@@ -17,7 +17,7 @@ const Search = () => {
     };
     // Check when assembling
     handleResize();
-    
+
     // Listen for size changes
     window.addEventListener('resize', handleResize);
 
