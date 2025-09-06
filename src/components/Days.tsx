@@ -17,7 +17,6 @@ type Props = {
 
 const Days = ({ setShowSchedule, setCheck }: Props) => {
   const { selectedCinema } = useCinemaStore();
-
   const [selected, setSelected] = useState<string | null>(null);
   const [datum, setDatum] = useState<string | null>(null);
   const { selectDay } = useSchedule();
@@ -47,11 +46,9 @@ const Days = ({ setShowSchedule, setCheck }: Props) => {
   const checkDay = (datum: string) => {
     setDatum(datum);
     selectDay(datum);
-
-    const found = cinemas.find((c) => c.name === selectedCinema?.name);
+    const found = cinemas?.find((c) => c.name === selectedCinema?.name);
     const item = parseCustomDate(datum);
-    // I tell TS: “Trust me, this string is a valid key.
-    const resp = found?.list[item as keyof typeof found.list] ?? [];
+    const resp = found?.list[item] ?? [];
     setCheck(resp);
     setShowSchedule(resp);
   };
