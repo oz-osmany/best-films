@@ -15,31 +15,37 @@ const Persons = () => {
       try {
         if (id) {
           const [resPersonas, resMovie] = await Promise.all([
-            await Personas(parseInt(id)),
-            await MovieCredit(parseInt(id)),
+            Personas(parseInt(id)),
+            MovieCredit(parseInt(id)),
           ]);
 
           setCredit(resPersonas);
           setMovies(resMovie);
         }
       } catch (error) {
-        console.error('Error en la carga de datos:', error);
+        console.error('Error loading person:', error);
       }
     };
     Detalle();
   }, [id]);
-  console.log(credit?.biography.length);
   return (
     <section className="flex justify-center mt-[50px] lg:mt-[100px]">
       <div className="content">
-        {credit?.biography.length ? (
+        {
+          credit ? (
           <div className="flex flex-row">
             <div className="w-[100px] md:w-[200px]">
-              <img
-                src={`https://image.tmdb.org/t/p/w300${credit?.profile_path}`}
-                alt=""
-                className="!max-w-[300px] w-[100px] md:w-[200px]"
-              />
+              {credit.profile_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w300${credit?.profile_path}`}
+                  alt={`${credit.name} profile photo`}
+                  className="!max-w-[300px] w-[100px] md:w-[200px]"
+                  loading='lazy'
+                />
+
+              ): (
+                  <div className="w-[100px] md:w-[200px] h-[300px] bg-gray-200 rounded" aria-label="No photo available" />
+              )}
               <div className="mt-4">
                 <h2 className="text-sm md:text-lg text-bold">Personal Information</h2>
                 <p>
@@ -57,19 +63,22 @@ const Persons = () => {
                   <strong>Date of birth: </strong>
                   <span className="text-sm md:text-md">
                     {' '}
-                    {credit?.birthday.toString()
-                      ? credit?.birthday.toString()
-                      : 'No information'}{' '}
+                    {
+                      credit.birthday
+                        ? String(credit?.birthday)
+                        : 'No information'}{' '}
                   </span>
                 </p>
                 <p className="text-sm md:text-md">
                   <strong>Place of birth: </strong>
                   <span className="text-sm md:text-md">
                     {' '}
-                    {credit?.place_of_birth ? credit?.place_of_birth : 'No information'}{' '}
+                    {credit?.place_of_birth || 'No information'}{' '}
                   </span>
                 </p>
-                <p className="text-sm md:text-md">
+                {
+                  credit.also_known_as?.length && (
+                    <p className="text-sm md:text-md">
                   <strong>Also known as: </strong>
                   <span className="text-sm md:text-md">
                     {' '}
@@ -78,13 +87,14 @@ const Persons = () => {
                     })}{' '}
                   </span>
                 </p>
+                  )}                
               </div>
             </div>
             <div className="pl-4 overflow-hidden">
               <section>
                 <h1> {credit?.name} </h1>
-                <h3> Biography </h3>
-                <p className={`${expanded ? '' : 'line-clamp-6 text-sm md:text-md'}`}>
+                <h2> Biography </h2>
+                <p className={`text-sm md:text-md ${expanded ? '' : 'line-clamp-6'}`}>
                   {credit?.biography}
                 </p>
                 <button
@@ -98,8 +108,8 @@ const Persons = () => {
                 <h1 className="">Interpretation</h1>
                 <div className="card__list">
                   <table className="card__table">
-                    <tbody></tbody>
-                    {movies?.cast.map((item,i) => {
+                    <tbody>
+                    {movies?.cast?.map((item,i) => {
                       return (
                         <tr key={i}>
                           <td>
@@ -115,6 +125,7 @@ const Persons = () => {
                         </tr>
                       );
                     })}
+                    </tbody>
                   </table>
                 </div>
               </section>

@@ -1,38 +1,48 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Link, useParams } from 'react-router-dom';
 import { Sofa } from 'lucide-react';
 import { useTicket } from '@/store/ticket';
 
-const Booking = () => {
+const ROWS = 9;
+const COLS = 15;
+const TOTAL_SEATS = ROWS * COLS;
+
+const toRC = (i: number) => ({ r: Math.floor(i / COLS) + 1, c: (i % COLS) + 1 });
+
+const Booking: React.FC = () => {
   const { id } = useParams();
   const [select, setSelect] = useState<number[]>([]);
   const [selected, setSelected] = useState(false);
-  const [seat, setSeat] = useState(true);
-  const [rows, setRows] = useState<number[]>([]);
-  const [cols, setCols] = useState<number[]>([]);
   const [occupied, setOccupied] = useState<number[]>([35, 36]);
-  const { selectSeat, selectedSeat } = useTicket();
+  const { selectSeat } = useTicket();
 
-  const r = 9;
-  const c = 15;
+ 
 
-  const cells = Array.from({ length: r * c });
-
+  const cells = useMemo(() => Array.from({ length: TOTAL_SEATS }, (_, i) => i), []);
+  
   const getInfo = (pos: number) => {
     if (!select.includes(pos)) {
       setSelect([...select, pos]);
       setSelected(true);
-      setRows([...rows, Math.floor(pos / c) + 1]);
-      setCols([...cols, (pos % c) + 1]);
-      selectSeat(rows.length + 1);
+      selectSeat(select.length + 1);
     } else {
       setSelect((item) => item.filter((select) => select !== pos));
-      setRows(rows.filter((item) => item === pos));
-      setSelected(false);
-      selectSeat(rows.length + 1);
+      selectSeat(select.length + 1);
+      select.length === 0 && setSelected(false);
     }
   };
+  const freeSeats = TOTAL_SEATS - occupied.length - select.length;
+
+  const reservedLabels = useMemo(() => {
+    // Labels like R3C7 from current selection, sorted
+    return Array.from(select)
+      .sort((a, b) => a - b)
+      .map(i => {
+        const { r, c } = toRC(i);
+        return `R${r}C${c}`;
+      });
+  }, [select]);
 
   return (
     <div>
@@ -43,7 +53,7 @@ const Booking = () => {
           <h2>
             <strong>Select your seat(s)</strong>{' '}
           </h2>
-          <p className="text-[12px]">{135 - cols.length} free seats</p>
+          <p className="text-[12px]">{freeSeats} free seats</p>
         </div>
         <div className="w-full md:px-[60px] rounded-[15px] p-3 overflow-hidden border-solid border-[1px] border-gray-500">
           <div
@@ -110,13 +120,13 @@ const Booking = () => {
       {/* Reserved */}
       <div className={`${selected ? 'fixed bottom-0 w-full ' : 'hidden'}  `}>
         <div className="flex py-3 text-black bg-white border-t-[1px]">
-          <div className="mx-3">{rows.length} reserved seat </div>
+          <div className="mx-3">{reservedLabels.length} reserved seat </div>
           <div className="flex">
-            {rows?.map((item, i) => {
+            {reservedLabels?.map((item, i) => {
               return (
                 <div key={i}>                
-                    R{item}C{cols[i]}
-                    {rows.length - 1 > i && ','}{' '}
+                    {item}
+                    {reservedLabels.length - 1 > i && ','}{' '}
                  
                 </div>
               );

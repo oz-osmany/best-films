@@ -7,7 +7,7 @@ type Infoticket = {
   kind: string;
   total: number;
   selectedTotal: number;
-  selectTotal: (total: number) => number;
+  selectTotal: (total: number) => void;
 };
 
 export const useTicket = create<Infoticket>((set) => ({
@@ -20,7 +20,6 @@ export const useTicket = create<Infoticket>((set) => ({
   total: 0,
   selectedTotal: 0,
   selectTotal: (total) => {
-    set({ selectedTotal: total });
-    return total;
+    set({ selectedTotal: total })    
   },
 }));
