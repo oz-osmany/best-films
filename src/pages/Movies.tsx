@@ -44,7 +44,7 @@ const Movies = () => {
       }
     };
     detailMovie();
-  }, []);
+  }, [id]);
   const openMod = (item: string) => {
     setTime(item);
     setModalIsOpen(true);
