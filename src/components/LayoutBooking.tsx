@@ -31,7 +31,7 @@ const LayoutBooking = () => {
     <div className="flex flex-col lg:flex-row w-full h-screen">
       <aside className="relative lg:w-[20%] z-0 h-full">
         <div>
-          <div className="relative z-0 h-[50%] md:h-[400px] lg:h-[700px] w-full overflow-hidden">
+          <div className="relative z-0 h-[400px] lg:h-[700px] w-full overflow-hidden">
             <div
               className="absolute inset-0 w-full h-full lg:h-full"
               style={{

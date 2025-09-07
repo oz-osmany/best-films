@@ -1,3 +1,4 @@
+import ByTicket from '@/components/ByTicket';
 import Layout from '@/components/Layout';
 import LayoutBooking from '@/components/LayoutBooking';
 import NotFound from '@/components/Nofound';
@@ -24,7 +25,8 @@ export const router = createBrowserRouter([
     Component: LayoutBooking,
     children: [
       { path: 'seat/:id',   Component: Booking  },
-      { path: 'ticket/:id', Component: Ticket }
+      { path: 'ticket/:id', Component: Ticket },
+      { path: 'by/:id', Component: ByTicket }
     ]
   },
   { path: "*", Component: NotFound  }

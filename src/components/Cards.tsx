@@ -8,7 +8,7 @@ const Cards = ({ poster_path, original_title, title, id }: Result) => {
     <div className="p-1">
       <Card className="w-[150px] xl:w-[200px] xl:h-[250px]">
         <CardHeader className="p-0">
-          <Link to={`/movies/${id} `}>
+          <Link to={`/movies/${id}`}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               alt=""

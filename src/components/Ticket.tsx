@@ -1,8 +1,10 @@
 import { useTicket } from '@/store/ticket';
 import { CircleMinus, CirclePlus } from 'lucide-react';
 import React, { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const Ticket = () => {
+  const { id } = useParams()
   const [count, setCount] = useState<number>(0);
   const [countF, setCountF] = useState<number>(0);
   const { selectTotal, selectedSeat } = useTicket();
@@ -110,9 +112,11 @@ const Ticket = () => {
           </div>
         </div>
       </div>
+      <Link to={`/booking/by/${id}`}>
       <div className="fixed bottom-0 flex justify-center items-center w-full h-[60px] lg:h-[100px] bg-[#ffc426] text-[15px] md:text-[20px] lg:text-[30px] font-bold px-[17px]">
-        Choose a ticket type for 1 remaining seats
+        Continue
       </div>
+      </Link>
     </div>
   );
 };

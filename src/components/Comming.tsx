@@ -55,7 +55,7 @@ const Comming = () => {
             <CarouselItem key={item.id} className="basis-1/2 md:basis-auto pl-2">
               <Card className="w-[150px] xl:w-[200px] xl:h-[250px]">
                 <CardHeader className="p-0">
-                  <Link to={`/movies/${item.id} `}>
+                  <Link to={`/movies/${item.id}`}>
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                       alt=""
