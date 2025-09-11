@@ -1,4 +1,4 @@
-const month = new Date().toLocaleDateString("en-EN", { month: "short" });
+const month = new Date().toLocaleDateString('en-EN', { month: 'short' });
 export const days = [
   `FRI 01 ${month.toUpperCase()}`,
   `SAT 02 ${month.toUpperCase()}`,

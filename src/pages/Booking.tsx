@@ -17,10 +17,8 @@ const Booking: React.FC = () => {
   const [occupied, setOccupied] = useState<number[]>([35, 36]);
   const { selectSeat } = useTicket();
 
- 
-
   const cells = useMemo(() => Array.from({ length: TOTAL_SEATS }, (_, i) => i), []);
-  
+
   const getInfo = (pos: number) => {
     if (!select.includes(pos)) {
       setSelect([...select, pos]);
@@ -30,6 +28,7 @@ const Booking: React.FC = () => {
       setSelect((item) => item.filter((select) => select !== pos));
       selectSeat(select.length + 1);
       select.length === 0 && setSelected(false);
+      setSelected(false);
     }
   };
   const freeSeats = TOTAL_SEATS - occupied.length - select.length;
@@ -38,7 +37,7 @@ const Booking: React.FC = () => {
     // Labels like R3C7 from current selection, sorted
     return Array.from(select)
       .sort((a, b) => a - b)
-      .map(i => {
+      .map((i) => {
         const { r, c } = toRC(i);
         return `R${r}C${c}`;
       });
@@ -124,17 +123,16 @@ const Booking: React.FC = () => {
           <div className="flex">
             {reservedLabels?.map((item, i) => {
               return (
-                <div key={i}>                
-                    {item}
-                    {reservedLabels.length - 1 > i && ','}{' '}
-                 
+                <div key={i}>
+                  {item}
+                  {reservedLabels.length - 1 > i && ','}{' '}
                 </div>
               );
             })}
           </div>
         </div>
         <Link to={`/booking/ticket/${id}`}>
-          <div className="flex justify-center items-center bg-yellow-500 w-full h-[50px] text-black">
+          <div className="flex justify-center items-center bg-yellow-500 max-w-[1440px] w-full h-[50px] text-black">
             <strong>Continue</strong>
           </div>
         </Link>

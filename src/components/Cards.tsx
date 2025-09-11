@@ -3,7 +3,7 @@ import { Card, CardHeader } from './ui/card';
 import { Link } from 'react-router-dom';
 import { Result } from '@/types/type';
 
-const Cards = ({ poster_path, original_title, title, id }: Result) => {
+const Cards = ({ poster_path, original_title, title, name, id }: Result) => {
   return (
     <div className="p-1">
       <Card className="w-[150px] xl:w-[200px] xl:h-[250px]">
@@ -18,8 +18,7 @@ const Cards = ({ poster_path, original_title, title, id }: Result) => {
         </CardHeader>
       </Card>
       <div className="cards__name w-[150px] h-[42px] overflow-hidden">
-        {' '}
-        {original_title || title}{' '}
+        <p className="px-2">{original_title || title || name}</p>
       </div>
     </div>
   );

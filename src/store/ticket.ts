@@ -20,6 +20,6 @@ export const useTicket = create<Infoticket>((set) => ({
   total: 0,
   selectedTotal: 0,
   selectTotal: (total) => {
-    set({ selectedTotal: total })    
+    set({ selectedTotal: total });
   },
 }));

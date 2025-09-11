@@ -12,78 +12,58 @@ import { cn } from '@/lib/utils'; //cn() is a function for conditioning, combini
 
 const Nav = () => {
   const linkClass = () => {
-    return cn('text-sm lg:text-lg font-medium transition-colors hover:text-primary text-white ');
+    return cn(
+      'text-sm md:text-[18px] lg:text-lg font-medium transition-colors hover:text-primary text-white '
+    );
   };
   return (
-    <div className="flex justify-between w-full">
-      <div className="flex items-center w-[900px]">
-        <NavigationMenu className="max-w-full nav-list z-11">
-          <Button className="hidden lg:block lg:w-[50px] lg:bg-gray-60 lg:mr-14">
-            <Search />
-          </Button>
-          <NavigationMenuList className="flex-1 justify-around w-full lg:justify-between lg:gap-8">
-            <NavigationMenuItem className="flex flex-col ">
-              <Button className="bg-transparent md:hidden">
-                <Film className="w-5 h-5 mr-2" />
-              </Button>
-              <Link to="/" className={cn(linkClass(), 'block md:hidden lg:block')}>
-                Movies
+    <div
+      className="fixed lg:absolute bottom-0 lg:top-0 flex w-full md:h-[80px] bg-gradient-to-t from-gray-900 to-gray-700
+                        lg:bg-black/10 lg:bg-none lg:from-none lg:to-none"
+    >
+      {/* <div className="flex items-center w-full"> */}
+      <NavigationMenu className="nav__menu w-full nav-list z-11 !max-w-full">
+        <NavigationMenuList className="flex-1 justify-around w-full lg:justify-center lg:gap-8">
+          <NavigationMenuItem className="flex flex-col ">
+            <Button className="bg-transparent lg:hidden">
+              <Film size={32} />
+            </Button>
+            <Link to="/" className={cn(linkClass(), 'block')}>
+              Movies
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="flex flex-col">
+            <Button className="bg-transparent lg:hidden">
+              <Pin className="w-5 h-5 mr-2" />
+            </Button>
+            <Link to="/peliculas" className={cn(linkClass(), 'block')}>
+              Cinemas
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="flex flex-col">
+            <Button className="bg-transparent lg:hidden">
+              <Book className="w-5 h-5 mr-2" />
+            </Button>
+            <Link to="/streaming" className={cn(linkClass(), 'block')}>
+              Club
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="flex flex-col">
+            <Button className="bg-transparent lg:hidden">
+              <Wallet className="w-5 h-5 mr-2" />
+            </Button>
+            <div className="block lg:flex gap-8">
+              <Link to="/contacto" className={cn(linkClass(), 'block')}>
+                Wallet
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem className="flex flex-col">
-              <Button className="bg-transparent md:hidden">
-                <Pin className="w-5 h-5 mr-2" />
-              </Button>
-              <Link to="/peliculas" className={cn(linkClass(), 'block md:hidden lg:block')}>
-                Cinemas
+              <Link to="/contacto" className={cn(linkClass(), 'hidden lg:block lg:block')}>
+                Subscriptions
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem className="flex flex-col">
-              <Button className="bg-transparent md:hidden">
-                <Book className="w-5 h-5 mr-2" />
-              </Button>
-              <Link to="/streaming" className={cn(linkClass(), 'block md:hidden lg:block')}>
-                Club
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem className="flex flex-col">
-              <Button className="bg-transparent md:hidden">
-                <Wallet className="w-5 h-5 mr-2" />
-              </Button>
-              <div className="md:hidden lg:block">
-                <Link to="/contacto" className={cn(linkClass(), 'block md:hidden')}>
-                  Wallet
-                </Link>
-                <Link to="/contacto" className={cn(linkClass(), 'hidden lg:block lg:block')}>
-                  Subscriptions
-                </Link>
-              </div>
-            </NavigationMenuItem>
-            <NavigationMenuItem className="flex flex-col">
-              <Button className="bg-transparent md:hidden">
-                <User />
-              </Button>
-              <Link to="/contacto" className={cn(linkClass(), 'block md:hidden')}>
-                Acount
-              </Link>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-      <div className="hidden md:flex items-center md:justify-end md:w-[650px] md:h-[50px]">
-        <div className="px-4">
-          <Link to="" className={cn(linkClass(), 'hidden md:block text-white')}>
-            Create an account
-          </Link>
-        </div>
-        <Button className="hidden md:block lg:w-[50px] btn md:mr-2">
-          <User />
-        </Button>
-        <Button className="hidden md:flex lg:w-[50px] btn md:mr-2">
-          EN
-          <ChevronDown />
-        </Button>
-      </div>
+            </div>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+      {/* </div> */}
     </div>
   );
 };

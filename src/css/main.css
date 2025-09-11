@@ -111,8 +111,8 @@ h3 {
 }
 
 .title {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   font-weight: 700;
 }
 @media (min-width: 700px) {
@@ -133,6 +133,21 @@ h3 {
 
 .swiper {
   display: flex !important;
+}
+
+svg {
+  height: 45px;
+  width: 45px;
+}
+@media (min-width: 700px) {
+  svg {
+    height: 55px;
+    width: 55px;
+  }
+}
+
+.nav__menu > div {
+  width: 100%;
 }
 
 .content {
@@ -167,6 +182,23 @@ h3 {
     padding-left: 32px;
     padding-right: 32px;
   }
+}
+
+.divider::after {
+  content: '';
+  position: absolute;
+  height: 70px;
+  width: 2px;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+.ticket::after {
+  content: '';
+  position: relative;
+  display: block;
+  height: 7px;
+  background-image: url('/assets/ticket.jpg');
+  background-position: center 100% 100%;
 }
 
 .banner {
@@ -300,9 +332,11 @@ h3 {
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 7px;
+  padding-inline: 12px;
+  border-radius: 7px;
 }
 .btn__schedule {
-  @apply text-white rounded-[7px] w-[150px] h-[150px] bg-gray-500 text-[25px] font-bold flex items-end;
+  @apply text-white rounded-[7px] w-[150px] h-[120px] md:h-[150px] bg-gray-500 text-[25px] font-bold flex items-end;
   padding-left: 13px;
 }
 .btn__booking:hover {

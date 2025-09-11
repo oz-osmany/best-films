@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 
 const NoFilms = () => {
   return (
-    <div className="flex justify-center my-[80px] px-16">
+    <div className="flex justify-center mb-[80px] mt-[85px] px-16">
       <div className="flex flex-col items-center">
         <div className="my-8">
           <img src="../assets/icons8-boleto-50.png" className="w-[120px]" alt="" />

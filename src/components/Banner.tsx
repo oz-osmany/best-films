@@ -3,8 +3,8 @@ import BookNow from './BookNow';
 const Banner = () => {
   return (
     <div
-      className="relative bottom-[70px] md:bottom-0 z-10 flex flex-col items-center
-            justify-end md:justify-center h-full text-center"
+      className="relative bottom-[43px] md:bottom-0 z-10 flex flex-col items-center
+            justify-end md:justify-center h-full text-center translate-y-[30px]"
     >
       <div className="show__content lg:w-[90%] lg:mx-auto">
         <div className="flex w-full">

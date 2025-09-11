@@ -1,5 +1,5 @@
 const d = new Date();
-const month = String(d.getMonth() + 1).padStart(2, "0"); 
+const month = String(d.getMonth() + 1).padStart(2, '0');
 const year = new Date().getFullYear();
 
 export const cinemas = [

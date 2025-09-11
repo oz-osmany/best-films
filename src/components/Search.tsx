@@ -43,7 +43,7 @@ const Search = () => {
     <div className="lg:mx-auto ">
       <div
         ref={searchRef}
-        className="relative z-30 md:z-40 pointer-events-auto flex w-full h-[48px] lg:h-[68px] rounded-[8px] border border-solid"
+        className="relative z-30 md:z-40 pointer-events-auto flex w-full h-[48px] md:h-[70px] lg:h-[80px] rounded-[8px] border border-solid"
       >
         <input
           type="text"

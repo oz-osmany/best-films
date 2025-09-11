@@ -71,7 +71,7 @@ const Comming = () => {
       </Carousel>
 
       <div>
-        <Button className="w-full h-[48px] mb-[50px] bg-[#bdabab42] lg:hidden">All specials</Button>
+        <Button className="w-full h-[48px] my-[25px] bg-[#bdabab42] lg:hidden">All specials</Button>
       </div>
     </div>
   );

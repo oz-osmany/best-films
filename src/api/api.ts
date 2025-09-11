@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_KEY = import.meta.env.VITE_API_KEY;
 const URL = 'https://api.themoviedb.org/3/movie/popular';
 const URL_G = 'https://api.themoviedb.org/3/genre/movie/list';
-const URL_SERIE = 'https://api.themoviedb.org/3/tv/popular';
+const URL_SERIE = 'https://api.themoviedb.org/3/discover/tv';
 const URL_TREND = 'https://api.themoviedb.org/3/trending/all/week';
 const URL_TRAILER = 'https://api.themoviedb.org/3/movie';
 const URL_SEARCH = 'https://api.themoviedb.org/3/search/multi';
@@ -27,9 +27,8 @@ export const Credit = async (id: number) => {
   );
   return respuesta.data;
 };
-export const Series = async (i: number = 1) => {
-  const respuesta = await axios(`${URL_SERIE}?api_key=${API_KEY}&language=en-EN&page=${i}`);
-
+export const Series = async () => {
+  const respuesta = await axios(`${URL_SERIE}?api_key=${API_KEY}&language=en-EN`);
   return respuesta.data.results;
 };
 export const Trend = async () => {
@@ -44,7 +43,6 @@ export const Trailer = async (id: number) => {
 };
 export const Personas = async (id: number) => {
   const respuesta = await axios(`${URL_PERSON}/${id}?api_key=${API_KEY}&language=en-US`);
-  console.log(respuesta.data);
   return respuesta.data;
 };
 export const SearchPelis = async () => {

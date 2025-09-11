@@ -14,6 +14,7 @@ import ReactModal from 'react-modal';
 import { Credits } from '@/types/credits';
 import Details from '@/components/Details';
 import Days from '@/components/Days';
+import { useSchedule } from '@/store/schedule';
 
 const Movies = () => {
   const { id } = useParams();
@@ -31,6 +32,7 @@ const Movies = () => {
   const filteredCrew = credit?.crew.filter((person) => person.job && jobs.includes(person.job));
 
   const { selectFilm } = useFilms();
+  const { selectedDay } = useSchedule();
 
   useEffect(() => {
     const detailMovie = async () => {
@@ -54,9 +56,9 @@ const Movies = () => {
     setModalIsOpen(false);
   };
   return (
-    <div className="relative z-0 h-[56%] md:h-[400px] lg:h-[580px] w-full">
+    <div className="relative z-0 h-[56%] md:h-[400px] lg:h-[580px] w-full pt-[150px] md:pt-[250px]">
       <div
-        className="absolute right-0 w-full lg:w-[65%] h-[300px] lg:h-[600px]"
+        className="absolute top-0 right-0 w-full lg:w-[65%] h-[300px] lg:h-[600px]"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original${film?.backdrop_path})`,
           backgroundSize: 'cover',
@@ -64,7 +66,7 @@ const Movies = () => {
         }}
       ></div>
       <div className="gradient"></div>
-      <div className="movie lg:pt-[10rem]">
+      <div className="movie lg:pt-[10rem] !pb-0 !md:pb-[64px]">
         <div className="flex flex-col w-full lg:w-[50%]">
           <div className="mb-4">
             <h1 className="title">{film?.title}</h1>
@@ -121,7 +123,7 @@ const Movies = () => {
         </div>
       </div>
       <div className="separador top-[170px] lg:bottom-[-290px] lg:top-[470px]"></div>
-      <div>
+      <div className="relative top-[50px] md:top-[185px]">
         {/* Search */}
         <div className="content  mb-4">
           <Search />
@@ -143,16 +145,16 @@ const Movies = () => {
       {/* Screen on this day */}
       <section className="content relative block">
         {showSchedule?.length !== 0 && (
-          <div className="flex my-8">
+          <div className="flex mt-[60px] mb-[30px]">
             <HeartPlus className="btn w-[40px] h-[40px]" />
             <div className="ml-4">
               <p>{selectedCinema?.name}</p>
-              <p>{selectedCinema?.address}</p>
+              <p className="text-[13px]">{selectedCinema?.address}</p>
             </div>
           </div>
         )}
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 md:mt-[185px]">
           {check?.map((item, index) => {
             return (
               <div className="btn__schedule" onClick={() => openMod(item)} key={index}>
@@ -173,7 +175,7 @@ const Movies = () => {
             className="modal__schedule "
             bodyOpenClassName="overflow-hidden"
           >
-            <ModalBook time={time} closeMod={closeMod} datum={datum} />
+            <ModalBook time={time} closeMod={closeMod} datum={selectedDay} />
           </ReactModal>
         )}
       </section>

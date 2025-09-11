@@ -28,48 +28,44 @@ const LayoutBooking = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row w-full h-screen">
-      <aside className="relative lg:w-[20%] z-0 h-full">
-        <div>
-          <div className="relative z-0 h-[400px] lg:h-[700px] w-full overflow-hidden">
-            <div
-              className="absolute inset-0 w-full h-full lg:h-full"
-              style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/original${film?.backdrop_path})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
-            <div className="absolute w-full h-full bg-[#40405a57]"></div>
-            <div className="banner__title flex-col">
-              <div className="w-[35%] h-[200px] ">
-                <img
-                  src={`https://image.tmdb.org/t/p/original${film?.poster_path}`}
-                  alt={`Film ${film?.original_title}`}
-                  className="rounded-[10px]"
-                />
-              </div>
-              <div>
-                <h1>
-                  <strong>{film?.title} </strong>{' '}
-                </h1>
-              </div>
-              <div>
-                <h2> {selectedCinema?.name} </h2>
-              </div>
-              <div className="btn mt-3">Change film</div>
+    <div className="flex flex-col lg:flex-row w-full min-h-[884px] h-full overflow-y-auto">
+      <aside className="h-full lg:w-[25%]">
+        <div className="relative z-0 h-[400px] lg:h-[57%] w-full overflow-hidden">
+          {/* <div className="relative z-0 h-[400px] lg:h-[473px] w-full overflow-hidden"> */}
+          <div
+            className="absolute inset-0 w-full h-full lg:h-full"
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/original${film?.backdrop_path})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          ></div>
+          <div className="absolute w-full h-full bg-[#40405a57]"></div>
+          <div className="banner__title flex-col">
+            <div className="w-[35%] h-[200px] ">
+              <img
+                src={`https://image.tmdb.org/t/p/original${film?.poster_path}`}
+                alt={`Film ${film?.original_title}`}
+                className="rounded-[10px]"
+              />
             </div>
+            <div className="px-3 text-center">
+              <h1>
+                <strong>{film?.title} </strong>{' '}
+              </h1>
+            </div>
+            <div className="btn mt-3">Change film</div>
           </div>
-          {location.pathname.startsWith('/booking/ticket') ? (
-            <InfoTicket day={day} time={time} />
-          ) : (
-            <InfoAccordion />
-          )}
         </div>
+        {location.pathname.startsWith('/booking/ticket') ? (
+          <InfoTicket day={day} time={time} />
+        ) : (
+          <InfoAccordion />
+        )}
       </aside>
 
       <main
-        className={`${seat ? 'relative z-40 w-full lg:w-[80%] bg-white rounded-[10px]' : 'hidden'} `}
+        className={`${seat ? 'relative w-full lg:w-[75%] bg-white rounded-[10px] pb-[200px]' : 'hidden'} `}
       >
         <Outlet />
       </main>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const Ticket = () => {
-  const { id } = useParams()
+  const { id } = useParams();
   const [count, setCount] = useState<number>(0);
   const [countF, setCountF] = useState<number>(0);
   const { selectTotal, selectedSeat } = useTicket();
@@ -39,7 +39,7 @@ const Ticket = () => {
   return (
     <div className="h-[100vh] pt-3 pb-[40px] text-black rounded-t-[10px] bg-[#f8f8f8]">
       <div className="bg-[#d8d0d042] rounded-[10px] py-2 px-4 mb-4 mx-3">Auditorium 7</div>
-      <div className="w-full lg:w-[1240px] mx-auto flex flex-col justify-center">
+      <div className="w-full lg:w-[90%] mx-auto flex flex-col justify-center">
         <div className="flex items-center flex-col pb-4 lg:pb-8">
           <h1 className="font-bold text-[24px] lg:text-[45px]">Select your rates </h1>
         </div>
@@ -60,11 +60,11 @@ const Ticket = () => {
         </div>
         <div className="flex flex-col py-4 lg:rounded-b-[10px] bg-white">
           <div className="flex justify-between p-4">
-            <div className="flex flex-col md:flex-row lg:items-center">
+            <div className="flex flex-col md:flex-row lg:items-center w-[60%] lg:w-[80%]">
               <div className="w-[225px] md:w-[175px] lg:w-[270px]">
-                <h2 className="font-bold text-[16px] lg:text-[26px] ">Filmticket Relax Seat</h2>
+                <h2 className="font-bold text-[16px] lg:text-[22px] ">Filmticket Relax Seat</h2>
               </div>
-              <div className="w-0 md:w-[350px] lg:w-[380px] h-[1px] bg-gray-300"></div>
+              <div className="w-0 md:w-[350px] lg:w-[90%] h-[1px] bg-gray-300"></div>
 
               <div className="ml-3">
                 <p className="font-bold text-[20px] lg:text-[26px] ">€16,00</p>
@@ -72,32 +72,32 @@ const Ticket = () => {
             </div>
             <div className="flex gap-3">
               <div>
-                <CircleMinus size={40} className="text-gray-300" onClick={() => setFilm(0)} />
+                <CircleMinus className="text-gray-300" onClick={() => setFilm(0)} />
               </div>
               <div className="flex items-center text-[30px] font-bold">{countF} </div>
               <div>
-                <CirclePlus size={40} color="#f3b43fff" onClick={() => setFilm(1)} />
+                <CirclePlus color="#f3b43fff" onClick={() => setFilm(1)} />
               </div>
             </div>
           </div>
 
           <div className="flex justify-between px-4 pb-2">
-            <div className="flex flex-col md:flex-row lg:items-center">
+            <div className="flex flex-col md:flex-row lg:items-center w-[60%] lg:w-[80%]">
               <div className="w-[225px] md:w-[175px] lg:w-[270px]">
-                <h2 className="font-bold text-[16px] lg:text-[26px] ">Stadspas ticket RS</h2>
+                <h2 className="font-bold text-[16px] lg:text-[22px] ">Stadspas ticket RS</h2>
               </div>
-              <div className="w-0 md:w-[350px] lg:w-[680px] h-[1px] bg-gray-300"></div>
+              <div className="w-0 md:w-[350px] lg:w-[90%] h-[1px] bg-gray-300"></div>
               <div className="ml-3">
                 <p className="font-bold text-[20px] lg:text-[26px] ">€10,00</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <div>
-                <CircleMinus size={40} className="text-gray-300" onClick={() => setStad(0)} />
+                <CircleMinus className="text-gray-300" onClick={() => setStad(0)} />
               </div>
               <div className="flex items-center text-[30px] font-bold"> {count} </div>
               <div>
-                <CirclePlus size={40} color="#f3b43fff" onClick={() => setStad(1)} />
+                <CirclePlus color="#f3b43fff" onClick={() => setStad(1)} />
               </div>
             </div>
           </div>
@@ -107,16 +107,18 @@ const Ticket = () => {
             {' '}
             Transaction fees of € 0,50 can be added at next step{' '}
           </p>
-          <div className="absolute bottom-[45%] lg:bottom-[10%] lg:right-[50px] font-medium text-gray-500 bg-[#d8d0d042] py-2 px-4 my-4 rounded-[20px]">
+          <div className="absolute bottom-[11%] lg:bottom-[45%] lg:bottom-[10%] lg:right-[50px] font-medium text-gray-500 bg-[#d8d0d042] py-2 px-4 my-4 rounded-[20px]">
             My consents
           </div>
         </div>
       </div>
-      <Link to={`/booking/by/${id}`}>
-      <div className="fixed bottom-0 flex justify-center items-center w-full h-[60px] lg:h-[100px] bg-[#ffc426] text-[15px] md:text-[20px] lg:text-[30px] font-bold px-[17px]">
-        Continue
-      </div>
-      </Link>
+      {(countF > 0 || count > 0) && (
+        <Link to={`/booking/by/${id}`}>
+          <div className="fixed bottom-0 flex justify-center items-center max-w-[1440px] w-full h-[60px] lg:h-[100px] bg-[#ffc426] text-[15px] md:text-[20px] lg:text-[30px] font-bold px-[17px]">
+            Continue
+          </div>
+        </Link>
+      )}
     </div>
   );
 };

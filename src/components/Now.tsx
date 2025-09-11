@@ -26,7 +26,7 @@ const Now = () => {
       <p className="movie__sub text-[15px] text-gray-500 font-medium">in {selectedCinema?.name} </p>
       <Carousels showing={showing[0]} />
       <div>
-        <Button className="w-full h-[48px] mb-[50px] bg-[#bdabab42] lg:hidden">
+        <Button className="w-full h-[48px] my-[25px] bg-[#bdabab42] lg:hidden">
           All films now schowing
         </Button>
       </div>

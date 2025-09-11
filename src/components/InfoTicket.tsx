@@ -10,19 +10,19 @@ const InfoTicket = ({ day, time }: Info) => {
   const { selectedTotal, selectedSeat } = useTicket();
   return (
     <>
-      <div className="flex flex-col pt-[70px] h-[305px] w-full bg-gray-700 text-white">
+      <div className="flex flex-col pt-[35px] lg:pt-[70px] h-[32%] w-full bg-gray-700 text-white">
         <div className="flex pb-[30px]">
           <div className="flex justify-center w-[33%] px-2">
-            <p className="text-[30px] font-bold text-center">{day}</p>
+            <p className="text-[25px] lg:text-[30px] font-bold text-center">{day}</p>
           </div>
           <div className="divider"></div>
           <div className="flex justify-center items-center w-[33%]">
-            <p className="text-[30px] font-bold">{time}</p>
+            <p className="text-[25px] lg:text-[30px] font-bold">{time}</p>
           </div>
           <div className="divider"></div>
           <div className="flex flex-col items-center w-[33%]">
-            <p className="text-[30px] font-bold">{selectedSeat}</p>
-            <p className="text-[30px] font-bold">Seat</p>
+            <p className="text-[25px] lg:text-[30px] font-bold">{selectedSeat}</p>
+            <p className="text-[25px] lg:text-[30px] font-bold">Seat</p>
           </div>
         </div>
         <div className="w-[90%] p-3 mx-auto rounded-[30px] bg-gray-400 text-center text-white text-[25px] font-medium">
