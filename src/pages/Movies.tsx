@@ -39,7 +39,6 @@ const Movies = () => {
       if (id) {
         const resp = await PelisId(parseInt(id));
         const respuesta = await Credit(parseInt(id));
-
         setCredit(respuesta);
         setFilm(resp);
         selectFilm(resp);
@@ -56,7 +55,7 @@ const Movies = () => {
     setModalIsOpen(false);
   };
   return (
-    <div className="relative z-0 h-[56%] md:h-[400px] lg:h-[580px] w-full pt-[150px] md:pt-[250px]">
+    <div className="relative z-0 h-[56%] md:h-[400px] lg:h-[580px] w-full pt-[120px] md:pt-[250px] lg:pt-[70px]">
       <div
         className="absolute top-0 right-0 w-full lg:w-[65%] h-[300px] lg:h-[600px]"
         style={{
@@ -66,10 +65,10 @@ const Movies = () => {
         }}
       ></div>
       <div className="gradient"></div>
-      <div className="movie lg:pt-[10rem] !pb-0 !md:pb-[64px]">
+      <div className="movie !pb-0 !md:pb-[64px]">
         <div className="flex flex-col w-full lg:w-[50%]">
-          <div className="mb-4">
-            <h1 className="title">{film?.title}</h1>
+          <div className="mb-8">
+            <h1 className="text-[2.5rem] lg:text-[4.5rem] font-bold">{film?.title}</h1>
           </div>
           <div className="flex justify-between lg:justify-start w-full">
             <button className="movie__btn lg:mr-2">
@@ -82,7 +81,7 @@ const Movies = () => {
             </button>
           </div>
           <div className="flex flex-col items-start w-full">
-            <div>
+            <div className='py-3'>
               <span className="genre">
                 {film?.genres.map((item, index) => {
                   return (
@@ -99,11 +98,11 @@ const Movies = () => {
               </span>
             </div>
             <div className="content !px-0">
-              <p className="text-sm md:text-lg lg:text-lg">
+              <p className="text-sm md:text-lg lg:text-lg mb-2">
                 Release day: {film?.release_date.toString()}{' '}
               </p>
               <p className="text-[12px] md:text-lg lg:text-lg line-clamp-3"> {film?.overview} </p>
-              <div className="flex gap-[5px] overflow-x-auto pt-4">
+              <div className="flex gap-[5px] overflow-x-auto scrollbar-none pt-4">
                 {filteredCrew?.map((item) => {
                   return (
                     <div style={{ color: 'white' }} key={item.id}>
@@ -123,7 +122,7 @@ const Movies = () => {
         </div>
       </div>
       <div className="separador top-[170px] lg:bottom-[-290px] lg:top-[470px]"></div>
-      <div className="relative top-[50px] md:top-[185px]">
+      <div className="relative top-[50px] md:top-[185px] lg:top-[40px]">
         {/* Search */}
         <div className="content  mb-4">
           <Search />

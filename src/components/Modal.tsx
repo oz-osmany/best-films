@@ -25,7 +25,7 @@ const Modal = ({ closeModal }: ModalProps) => {
   }, [search]);
 
   return createPortal(
-    <div className="modal inset-0 bg-black/70 flex flex-col justify-center items-center  z-50">
+    <div className="modal inset-0 bg-black/70 flex flex-col justify-center items-center z-50 rounded-[10px]">
       <div className="sticky top-0 flex flex-col w-full bg-white z-10 p-4 border-b flex justify-between items-center">
         <div className="flex justify-end w-full">
           <button onClick={closeModal} className="text-black hover:text-gray-700">
@@ -34,7 +34,7 @@ const Modal = ({ closeModal }: ModalProps) => {
         </div>
         <div className="w-full">
           <h2 className="text-lg text-black font-bold">Look for a cinema</h2>
-          <div className="flex items-center justify-around text-black bg-gray-200 w-full h-[50px]">
+          <div className="flex items-center justify-around text-black bg-gray-200 w-full h-[50px] rounded-[30px]">
             <Search className="w-[16px]" />
             <input
               type="search"

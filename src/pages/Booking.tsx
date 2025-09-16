@@ -117,7 +117,7 @@ const Booking: React.FC = () => {
         </div>
       </div>
       {/* Reserved */}
-      <div className={`${selected ? 'fixed bottom-0 w-full ' : 'hidden'}  `}>
+      <div className={`${selected ? 'absolute bottom-[50px] lg:bottom-0 w-full ' : 'hidden'}  `}>
         <div className="flex py-3 text-black bg-white border-t-[1px]">
           <div className="mx-3">{reservedLabels.length} reserved seat </div>
           <div className="flex">
@@ -132,8 +132,8 @@ const Booking: React.FC = () => {
           </div>
         </div>
         <Link to={`/booking/ticket/${id}`}>
-          <div className="flex justify-center items-center bg-yellow-500 max-w-[1440px] w-full h-[50px] text-black">
-            <strong>Continue</strong>
+          <div className="flex justify-center items-center bg-yellow-500 w-full h-[56px] lg:h-[100px] text-black">
+            <strong className='text-[18px] lg:text-[25px]'>Continue</strong>
           </div>
         </Link>
       </div>

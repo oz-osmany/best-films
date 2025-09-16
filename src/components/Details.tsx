@@ -8,7 +8,7 @@ import { Navigation } from 'swiper/modules';
 
 const Details = ({ credit }: { credit: Credits }) => {
   return (
-    <div className="content py-8">
+    <div className="content pt-8 md:py-8">
       <Swiper
         spaceBetween={20}
         slidesPerView={1}

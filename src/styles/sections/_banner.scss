@@ -33,6 +33,11 @@
 
 .gradient {
   @media (min-width: 1024px) {
+    @apply absolute inset-0 bg-gradient-to-r from-black from-[40%] via-black/70 to-transparent;
+  }
+}
+.gradientbanner {
+  @media (min-width: 1024px) {
     @apply absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent;
   }
 }

@@ -21,7 +21,6 @@ const Nav = () => {
       className="fixed lg:absolute bottom-0 lg:top-0 flex w-full md:h-[80px] bg-gradient-to-t from-gray-900 to-gray-700
                         lg:bg-black/10 lg:bg-none lg:from-none lg:to-none"
     >
-      {/* <div className="flex items-center w-full"> */}
       <NavigationMenu className="nav__menu w-full nav-list z-11 !max-w-full">
         <NavigationMenuList className="flex-1 justify-around w-full lg:justify-center lg:gap-8">
           <NavigationMenuItem className="flex flex-col ">
@@ -63,7 +62,6 @@ const Nav = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      {/* </div> */}
     </div>
   );
 };

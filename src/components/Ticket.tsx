@@ -71,12 +71,12 @@ const Ticket = () => {
               </div>
             </div>
             <div className="flex gap-3">
-              <div>
-                <CircleMinus className="text-gray-300" onClick={() => setFilm(0)} />
+              <div className='flex items-center'>
+                <CircleMinus size={40} className="text-gray-300" onClick={() => setFilm(0)} />
               </div>
               <div className="flex items-center text-[30px] font-bold">{countF} </div>
-              <div>
-                <CirclePlus color="#f3b43fff" onClick={() => setFilm(1)} />
+              <div className='flex items-center'>
+                <CirclePlus size={40} color="#f3b43fff" onClick={() => setFilm(1)} />
               </div>
             </div>
           </div>
@@ -92,12 +92,12 @@ const Ticket = () => {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <div>
-                <CircleMinus className="text-gray-300" onClick={() => setStad(0)} />
+              <div className='flex items-center'>
+                <CircleMinus size={40} className="text-gray-300" onClick={() => setStad(0)} />
               </div>
               <div className="flex items-center text-[30px] font-bold"> {count} </div>
-              <div>
-                <CirclePlus color="#f3b43fff" onClick={() => setStad(1)} />
+              <div className='flex items-center'>
+                <CirclePlus size={40} color="#f3b43fff" onClick={() => setStad(1)} />
               </div>
             </div>
           </div>

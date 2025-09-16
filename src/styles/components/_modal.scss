@@ -16,12 +16,12 @@
   }
   @media (min-width: 1024px) {
     max-width: 1900px !important;
-    width: 90%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
   &__list :hover {
-    background-color: rgb(158, 183, 198);
+    background-color: rgb(224, 229, 232);
   }
   &__schedule {
     @apply bg-gray-50 rounded-lg shadow-lg w-full md:max-w-2xl outline-none h-screen flex flex-col overflow-hidden;

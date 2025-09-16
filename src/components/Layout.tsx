@@ -30,7 +30,7 @@ const Layout = () => {
                 Create an account
               </Link>
             </div>
-            <Button className="hidden md:block lg:w-[50px] btn md:mr-2">
+            <Button className="hidden md:flex lg:w-[50px] btn md:mr-2">
               <User />
             </Button>
             <Button className="hidden md:flex lg:w-[50px] btn md:mr-2">

@@ -29,16 +29,16 @@ const Persons = () => {
     Detalle();
   }, [id]);
   return (
-    <section className="flex justify-center mt-[50px] lg:mt-[100px]">
+    <section className="flex justify-center mt-[65px] lg:mt-[80px] pb-[50px]">
       <div className="content">
         {credit ? (
-          <div className="flex flex-row">
-            <div className="w-[100px] md:w-[200px]">
+          <div className="flex flex-col md:flex-row">
+            <div className="relative md:fixed lg:top-[100px] w-full lg:w-[300px] md:w-[200px]">
               {credit.profile_path ? (
                 <img
                   src={`https://image.tmdb.org/t/p/w300${credit?.profile_path}`}
                   alt={`${credit.name} profile photo`}
-                  className="!max-w-[300px] w-[100px] md:w-[200px]"
+                  className="w-full lg:w-full md:w-[200px]"
                   loading="lazy"
                 />
               ) : (
@@ -48,61 +48,61 @@ const Persons = () => {
                 />
               )}
               <div className="mt-4">
-                <h2 className="text-sm md:text-lg text-bold">Personal Information</h2>
-                <p>
+                <h2 className="text-[18px] md:text-lg font-bold mb-2">Personal Information</h2>
+                <p className='mb-2'>
                   <strong>Known for: </strong>
                   <span>{credit?.known_for_department} </span>
                 </p>
-                <p className="text-sm md:text-md">
+                <p className="text-[18px] md:text-[20px] mb-2">
                   <strong>Sex: </strong>
-                  <span className="text-sm md:text-md">
+                  <span className="text-[18px] md:text-[20px] mb-2">
                     {' '}
                     {credit?.gender === 1 ? 'Female' : 'Male'}{' '}
                   </span>
                 </p>
-                <p className="text-sm md:text-md">
+                <p className="text-[18px] md:text-[20px] mb-2">
                   <strong>Date of birth: </strong>
-                  <span className="text-sm md:text-md">
+                  <span className="text-[18px] md:text-[20px] mb-2">
                     {' '}
                     {credit.birthday ? String(credit?.birthday) : 'No information'}{' '}
                   </span>
                 </p>
-                <p className="text-sm md:text-md">
+                <p className="text-[18px] md:text-[20px] mb-2">
                   <strong>Place of birth: </strong>
-                  <span className="text-sm md:text-md">
+                  <span className="text-[18px] md:text-[20px] mb-2">
                     {' '}
                     {credit?.place_of_birth || 'No information'}{' '}
                   </span>
                 </p>
                 {credit.also_known_as?.length && (
-                  <p className="text-sm md:text-md">
+                  <p className="text-[18px] md:text-[20px] mb-2">
                     <strong>Also known as: </strong>
-                    <span className="text-sm md:text-md">
+                    <span className="text-[18px] md:text-[20px] mb-2">
                       {' '}
                       {credit?.also_known_as.map((item, i) => {
-                        return <p key={i}> {item} </p>;
+                        return <p key={i} className='mb-2'> {item} </p>;
                       })}{' '}
                     </span>
                   </p>
                 )}
               </div>
             </div>
-            <div className="pl-4 overflow-hidden">
+            <div className="relative md:pl-[226px] lg:pl-[345px] overflow-hidden">
               <section>
-                <h1> {credit?.name} </h1>
+                <h1 className='my-3'> {credit?.name} </h1>
                 <h2> Biography </h2>
-                <p className={`text-sm md:text-md ${expanded ? '' : 'line-clamp-6'}`}>
+                <p className={`text-[18px] md:text-[19px] lg:text-[23px]  mb-2 ${expanded ? '' : 'line-clamp-6'}`}>
                   {credit?.biography}
                 </p>
                 <button
                   onClick={() => setExpanded(!expanded)}
-                  className="text-blue-600 font-semibold mt-2 text-sm md:text-md"
+                  className="text-blue-600 font-semibold mt-2 text-[18px] md:text-[20px] mb-2"
                 >
                   {expanded ? 'Read less' : 'Read more'}
                 </button>
               </section>
               <section>
-                <h1 className="">Interpretation</h1>
+                <h1 className="mb-[10px]">Interpretation</h1>
                 <div className="card__list">
                   <table className="card__table">
                     <tbody>
@@ -111,10 +111,10 @@ const Persons = () => {
                           <tr key={i}>
                             <td>
                               <div className="flex card__sm">
-                                <div className="card__sm-fecha text-sm md:text-md mr-2">
+                                <div className="card__sm-fecha text-[18px] md:text-[19px] mb-2 mr-2">
                                   {item.release_date.toString()}
                                 </div>
-                                <div className="card__sm-info text-sm md:text-md">
+                                <div className="card__sm-info text-[18px] md:text-[20px] mb-2">
                                   <Link to={`/movies/${item.id}`}>{item.title}</Link>
                                 </div>
                               </div>

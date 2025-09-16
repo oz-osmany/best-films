@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <section className="banner relative z-0 h-[544px] md:h-[580px] xl:h-[780px] w-full">
-        <div className="gradient"></div>
+        <div className="gradientbanner"></div>
         <Banner />
         <div className="separador"></div>
       </section>
