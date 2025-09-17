@@ -1,0 +1,8 @@
+
+{
+    "jobs": { "director":"Director","screenplay":"Screenplay","producer":"Producer","writer":"Writer" } ,
+    "release": "Release day",
+    "screen": "No screening on this day",
+    "noscreen": "There are no screenings scheduled on this date. View the calendar to find performances for another day.",
+    "view": "View screenings on Wednesday 13 August"
+}

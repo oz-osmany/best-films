@@ -1,6 +1,8 @@
-export const footerData = [
+export type FooterLink = { title: string; links: Array<string> };
+
+export const footerData: FooterLink[] = [
   {
-    title: 'Now showing',
+    title: 'now',
     links: [
       'The Fantastic Four: First Steps',
       'The Naked Gun',
@@ -10,7 +12,7 @@ export const footerData = [
     ],
   },
   {
-    title: 'Cinema in your cities',
+    title: 'cities',
     links: [
       'Filmpalast in Berlin',
       'Arthaus Kino in Hamburgo',
@@ -21,7 +23,7 @@ export const footerData = [
     ],
   },
   {
-    title: 'ABOUT',
+    title: 'about',
     links: [
       'Club Oz',
       'Subscriptions',
@@ -37,7 +39,7 @@ export const footerData = [
     ],
   },
   {
-    title: 'USEFUL LINKS',
+    title: 'useful',
     links: [
       'Klantenservice',
       'OzGiftcard',
@@ -54,7 +56,7 @@ export const footerData = [
     ],
   },
   {
-    title: 'TERMS & CONDITIONS',
+    title: 'terms',
     links: [
       'All terms & conditions',
       'Privacy statement',

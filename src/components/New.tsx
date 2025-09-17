@@ -3,9 +3,11 @@ import { news } from '@/api/movies';
 import { Button } from './ui/button';
 import { Series } from '@/api/api';
 import { Result } from '@/types/type';
+import { useTranslation } from 'react-i18next';
 
 const New = () => {
   const [showing, setShowing] = useState<Result[]>([]);
+    const { t } = useTranslation("home"); 
 
   useEffect(() => {
     const chargeMovies = async () => {
@@ -17,7 +19,7 @@ const New = () => {
   }, []);
   return (
     <div className="border-t-2 border-[#31292942] pt-[20px]">
-      <h1 className="title mb-[20px] mt-[25px]">New</h1>
+      <h1 className="title mb-[20px] mt-[25px]">{t("new")}</h1>
       <div className="w-full overflow-x-auto xl:overflow-x-hidden">
         <div className="flex gap-4 ">
           {showing.slice(0, 4).map((item, index) => {
@@ -38,7 +40,7 @@ const New = () => {
                     {item.original_title || item.name || item.original_name}{' '}
                   </h2>
                   <Button className="bg-[#feb91e] w-full h-[48px] text-black text-base rounded-[10px]">
-                    See the offers
+                    {t("ofers")}
                   </Button>
                 </div>
               </div>

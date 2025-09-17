@@ -9,8 +9,12 @@ import { Link } from 'react-router-dom';
 import { Film, Pin, Book, Wallet, User, Search, ChevronDown } from 'lucide-react';
 
 import { cn } from '@/lib/utils'; //cn() is a function for conditioning, combining, and cleaning CSS classes, especially useful when using Tailwind CSS in projects with shadcn/ui and React.
+import { useTranslation } from 'react-i18next';
 
 const Nav = () => {
+  
+  const { t, i18n } = useTranslation("home");
+  
   const linkClass = () => {
     return cn(
       'text-sm md:text-[18px] lg:text-lg font-medium transition-colors hover:text-primary text-white '
@@ -28,7 +32,7 @@ const Nav = () => {
               <Film size={32} />
             </Button>
             <Link to="/" className={cn(linkClass(), 'block')}>
-              Movies
+              {t("movies")}
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col">
@@ -36,7 +40,7 @@ const Nav = () => {
               <Pin className="w-5 h-5 mr-2" />
             </Button>
             <Link to="/peliculas" className={cn(linkClass(), 'block')}>
-              Cinemas
+              {t("cinema")}
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col">
@@ -56,7 +60,7 @@ const Nav = () => {
                 Wallet
               </Link>
               <Link to="/contacto" className={cn(linkClass(), 'hidden lg:block lg:block')}>
-                Subscriptions
+                {t("subscription")}
               </Link>
             </div>
           </NavigationMenuItem>

@@ -9,12 +9,12 @@ const URL_TRAILER = 'https://api.themoviedb.org/3/movie';
 const URL_SEARCH = 'https://api.themoviedb.org/3/search/multi';
 const URL_PERSON = 'https://api.themoviedb.org/3/person';
 
-export const Pelis = async (i: number = 1) => {
-  const respuesta = await axios(`${URL}?api_key=${API_KEY}&language=en-EN&page=${i}`);
+export const Pelis = async (i: number = 1,l:string) => {
+  const respuesta = await axios(`${URL}?api_key=${API_KEY}&language=${l}-DE&page=${i}`);
   return respuesta.data.results;
 };
-export const PelisId = async (id: number) => {
-  const respuesta = await axios(`${URL_TRAILER}/${id}?api_key=${API_KEY}&language=en-EN`);
+export const PelisId = async (id: number,l:string) => {
+  const respuesta = await axios(`${URL_TRAILER}/${id}?api_key=${API_KEY}&language=${l}-${l.toUpperCase}`);
   return respuesta.data;
 };
 export const Genero = async () => {

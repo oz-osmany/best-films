@@ -4,12 +4,15 @@ import { Button } from './ui/button';
 import Modal from './Modal';
 import ReactModal from 'react-modal';
 import { useCinemaStore } from '@/store/cinemaStore';
+import { useTranslation } from 'react-i18next';
 
 const Search = () => {
   const { selectedCinema } = useCinemaStore();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
+        const { t, i18n } = useTranslation("home");
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,14 +57,14 @@ const Search = () => {
         />
 
         <div className="flex mr-2 items-center justify-center h-full w-[40px] bg-transparent">
-          <ChevronDown className="stroke-white" />
+          <ChevronDown className="stroke-white" onClick={openModal}/>
         </div>
         <div className="hidden lg:flex items-center">
           <Button className="px-4 h-[54px] btn mr-2">
-            <MapPin /> Nearby
+            <MapPin /> {t("nearby")}
           </Button>
           <Button className="px-4 h-[54px] btn mr-2">
-            <Heart /> My cinema
+            <Heart /> {t("my")}
           </Button>
         </div>
       </div>

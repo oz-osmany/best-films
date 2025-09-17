@@ -49,10 +49,10 @@ const Booking: React.FC = () => {
       <div className="content pt-3 pb-[40px] text-black">
         <div className="bg-[#d8d0d042] py-2 px-4 mb-4 rounded-[7px]">Auditorium 3 4DX</div>
         <div className="flex items-center flex-col pb-4">
-          <h2>
+          <h2 className='md:text-[22px]'>
             <strong>Select your seat(s)</strong>{' '}
           </h2>
-          <p className="text-[12px]">{freeSeats} free seats</p>
+          <p className="text-[12px] md:text-[15px]">{freeSeats} free seats</p>
         </div>
         <div className="w-full md:px-[60px] rounded-[15px] p-3 overflow-hidden border-solid border-[1px] border-gray-500">
           <div
@@ -111,7 +111,6 @@ const Booking: React.FC = () => {
                   <Sofa className="text-gray-600" /> Occupied seats
                 </div>
               </div>
-              <div className="bg-[#d8d0d042] py-2 px-4 mb-4 rounded-[7px]">My consents</div>
             </div>
           </div>
         </div>

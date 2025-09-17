@@ -1,0 +1,7 @@
+{ 
+    "jobs": { "director":"Regie","screenplay":"Drehbuch","producer":"Produzent","writer":"Autor" },
+    "release": "Erscheinungstag",
+    "screen": "An diesem Tag findet keine Vorführung statt.",
+    "noscreen": "An diesem Tag sind keine Vorführungen geplant. Sehen Sie sich den Kalender an, um Vorstellungen an einem anderen Tag zu finden.",
+    "view": "Vorführungen am Mittwoch, 13. August, ansehen"
+}

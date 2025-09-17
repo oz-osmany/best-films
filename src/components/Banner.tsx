@@ -4,11 +4,13 @@ import { Pelis } from '@/api/api';
 import TripleBanner from './TripleBanner';
 import { Result } from '@/types/type';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Banner = () => {
   
   const [movie, setMovie] = useState<Result[]>([]);
-
+      const { t, i18n } = useTranslation("home");
+  
   useEffect(() => {
     const Films = async () =>{
       const res = await Pelis();
@@ -27,10 +29,10 @@ const Banner = () => {
           <div className="flex w-full">
             <div className="">
               <h1 className="text-amber-400 text-shadow-lg text-4xl md:text-5xl font-bold mb-6">
-                Explore New Movies
+                {t("bTitle")}
               </h1>
               <p className="text-amber-500 text-shadow-lg text-md md:text-xl mb-6">
-                Enjoy the best movies wherever you are.
+                {t("sbTitle")}
               </p>
               <Link to={`/movies/617126`}>
                 <BookNow plus={true} />

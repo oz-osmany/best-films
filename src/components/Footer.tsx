@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import {
   Accordion,
   AccordionContent,
@@ -12,6 +13,11 @@ import { footerData } from '../helpers/infoFooter';
 
 const Footer = () => {
   const [isDesktop, setIsDesktop] = useState(false);
+  const { t, i18n } = useTranslation("footer");
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language; // <html lang="...">
+  }, [i18n.language]);
 
   // Detect screen size changes
   useEffect(() => {
@@ -30,15 +36,15 @@ const Footer = () => {
 
   return (
     <div className="border-t-2 border-[#31292942]">
-      <div className="flex flex-col">
+      <div className="content flex flex-col">
         {/* Branch */}
         <div className="flex justify-between w-full mt-4">
           <div className="w-[60px] h-auto">
             <img src="./assets/logoazul.png" alt="" />
           </div>
           <div className="flex gap-2">
-            <Button>DE</Button>
-            <Button>EN</Button>
+            <Button onClick={() => i18n.changeLanguage('de')}>DE</Button>
+            <Button onClick={() => i18n.changeLanguage('en')}>EN</Button>
           </div>
         </div>
         {/* Menubar with all information */}
@@ -49,7 +55,7 @@ const Footer = () => {
                 <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
                   {footerData.map((section, index) => (
                     <div key={index}>
-                      <h4 className="font-semibold mb-3">{section.title}</h4>
+                      <h4 className="font-semibold mb-3">{t(section.title)}</h4>
                       <ul className="space-y-1 text-sm text-gray-300">
                         {section.links.map((link, idx) => (
                           <li key={idx}>
@@ -73,7 +79,7 @@ const Footer = () => {
                   >
                     <AccordionTrigger className="text-white hover:no-underline">
                       {' '}
-                      {section.title}
+                      {t(section.title)}
                     </AccordionTrigger>
                     <AccordionContent className="text-white" key={index}>
                       <ul className="space-y-1 text-sm text-gray-300">
@@ -103,10 +109,10 @@ const Footer = () => {
           </div>
           <div className="flex flex-col pb-24 pt-4 lg:py-4">
             <div className="flex justify-center">
-              <p className="text-gray-300/[50%] text-sm">Oz Cinemas Germany © 2025</p>
+              <p className="text-gray-300/[50%] text-sm">{t('cinemas','Oz Cinemas Germany © 2025')}</p>
             </div>
             <div className="flex justify-center">
-              <p className="text-gray-300/[50%]">All rights reserved ® </p>
+              <p className="text-gray-300/[50%]">{t('rights','All rights reserved ® ')}</p>
             </div>
           </div>
         </div>

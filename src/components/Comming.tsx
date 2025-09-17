@@ -5,12 +5,15 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Card, CardHeader } from './ui/card';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
 
 export interface InfoPeliWithTrailers extends InfoPeli {
   movieTrailers: OficialResult[];
 }
 const Comming = () => {
   const [movies, setMovies] = useState<InfoPeliWithTrailers[]>([]);
+  const { t } = useTranslation("home"); 
+  
 
   useEffect(() => {
     const Scenes = async () => {
@@ -48,7 +51,7 @@ const Comming = () => {
 
   return (
     <div className="border-t-2 border-[#31292942] pt-[20px]">
-      <h1 className="title mb-[20px]">Comming soon</h1>
+      <h1 className="title mb-[20px]">{t("comming")}</h1>
       <Carousel className="w-full h-[250px] carousel">
         <CarouselContent className="">
           {movies?.map((item) => (
@@ -71,7 +74,7 @@ const Comming = () => {
       </Carousel>
 
       <div>
-        <Button className="w-full h-[48px] my-[25px] bg-[#bdabab42] lg:hidden">All specials</Button>
+        <Button className="w-full h-[48px] my-[25px] bg-[#bdabab42] lg:hidden">{t("all")}</Button>
       </div>
     </div>
   );

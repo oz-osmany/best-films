@@ -15,6 +15,8 @@ import { Credits } from '@/types/credits';
 import Details from '@/components/Details';
 import Days from '@/components/Days';
 import { useSchedule } from '@/store/schedule';
+import { useTranslation } from 'react-i18next';
+import { useIdiom } from '@/store/idiom';
 
 const Movies = () => {
   const { id } = useParams();
@@ -25,11 +27,25 @@ const Movies = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [time, setTime] = useState<string>('');
   const [credit, setCredit] = useState<Credits>();
-  const [datum, setDatum] = useState<string | null>(null);
+  const { t} = useTranslation("movie");
+  const { selectedIdiom} = useIdiom();
+    // Talking about the crew
+  const jobNames = ['Director', 'Screenplay', 'Producer', 'Writer'] as const;
+  type JobName = typeof jobNames[number];
 
-  // Talking about the crew
-  const jobs = ['Director', 'Screenplay', 'Producer', 'Writer'];
-  const filteredCrew = credit?.crew.filter((person) => person.job && jobs.includes(person.job));
+// 2) Mapping von Jobname -> i18n-Key (fürs UI)
+type JobKey = 'jobs.director' | 'jobs.screenplay' | 'jobs.producer' | 'jobs.writer';
+const JOB_KEY_BY_JOB: Record<JobName, JobKey> = {
+  Director: 'jobs.director',
+  Screenplay: 'jobs.screenplay',
+  Producer: 'jobs.producer',
+  Writer: 'jobs.writer',
+};
+  // const filteredCrew = credit?.crew.filter((person) => person.job && jobNames.includes(person.job));
+const filteredCrew = credit?.crew.filter(
+  (p): p is typeof credit.crew[number] & { job: JobName } =>
+    jobNames.includes(p.job as JobName)
+);
 
   const { selectFilm } = useFilms();
   const { selectedDay } = useSchedule();
@@ -37,7 +53,7 @@ const Movies = () => {
   useEffect(() => {
     const detailMovie = async () => {
       if (id) {
-        const resp = await PelisId(parseInt(id));
+        const resp = await PelisId(parseInt(id),selectedIdiom);
         const respuesta = await Credit(parseInt(id));
         setCredit(respuesta);
         setFilm(resp);
@@ -45,7 +61,7 @@ const Movies = () => {
       }
     };
     detailMovie();
-  }, [id]);
+  }, [id,selectedIdiom]);
   const openMod = (item: string) => {
     setTime(item);
     setModalIsOpen(true);
@@ -99,17 +115,17 @@ const Movies = () => {
             </div>
             <div className="content !px-0">
               <p className="text-sm md:text-lg lg:text-lg mb-2">
-                Release day: {film?.release_date.toString()}{' '}
+                {t("release")}: {film?.release_date.toString()}{' '}
               </p>
               <p className="text-[12px] md:text-lg lg:text-lg line-clamp-3"> {film?.overview} </p>
               <div className="flex gap-[5px] overflow-x-auto scrollbar-none pt-4">
                 {filteredCrew?.map((item) => {
                   return (
                     <div style={{ color: 'white' }} key={item.id}>
-                      <div className="max-w-[68px] w-full mr-3">
+                      <div className="max-w-[80px] w-full mr-3">
                         <p className="text-yellow-200 text-sm md:text-lg lg:text-lg">
                           {' '}
-                          {item.job}{' '}
+                          { t(JOB_KEY_BY_JOB[item.job]) }{' '}
                         </p>
                         <p className="text-sm md:text-md"> {item.name} </p>
                       </div>
@@ -122,7 +138,7 @@ const Movies = () => {
         </div>
       </div>
       <div className="separador top-[170px] lg:bottom-[-290px] lg:top-[470px]"></div>
-      <div className="relative top-[50px] md:top-[185px] lg:top-[40px]">
+      <div className="relative top-[50px] md:top-[185px] lg:top-[85px]">
         {/* Search */}
         <div className="content  mb-4">
           <Search />
@@ -142,7 +158,7 @@ const Movies = () => {
         </div>
       </div>
       {/* Screen on this day */}
-      <section className="content relative block">
+      <section className="content relative block lg:bottom-[100px]">
         {showSchedule?.length !== 0 && (
           <div className="flex mt-[60px] mb-[30px]">
             <HeartPlus className="btn w-[40px] h-[40px]" />

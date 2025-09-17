@@ -32,7 +32,7 @@ const Details = ({ credit }: { credit: Credits }) => {
                     />
                   </Link>
                   <div className="jf-center">{item.original_title}</div>
-                  <div className="jf-center">{item.character}</div>
+                  <div className="jf-center pt-2">{item.character}</div>
                 </div>
               )}
             </SwiperSlide>
