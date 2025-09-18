@@ -4,5 +4,34 @@
     "release": "Release day",
     "screen": "No screening on this day",
     "noscreen": "There are no screenings scheduled on this date. View the calendar to find performances for another day.",
-    "view": "View screenings on Wednesday 13 August"
+    "view": "View screenings on Wednesday 13 August",
+    "relax": "Inthe Relax Seat, you'll be more comfortable! With an adjustable backrest, footstool and a table for your snacks.",
+    "select": "Select your seat",
+    "free": "free seats",
+    "pinch": "Pinch out to zoom",
+    "tap": "Tap to selet seat",
+    "myseat":"My seats",
+    "occupied": "Occupied seats",
+    "reserved": "reserved seat",
+    "continue": "Continue",
+    "change": "Change film",
+    "rates": "Select your rates",
+    "voucher": "Voucher",
+    "use": "Use your vouchers online by entering the code printed on your voucher (16 characters).",
+    "enter": "Enter the code",
+    "film": "Filmticket Relax Seat",
+    "transaction": "Transaction fees of € 0,50 can be added at next step",
+    "total": "Total",
+    "seat": "Seat",
+    "myticket": "My Ticket",
+    "fees": "Booking fees",
+    "secure": "Secure payment",
+    "purchase":"This is only a purchase simulation",
+    "goal": "Goal achieved",
+    "choose": "Choose a payment method:"
+
+
+
+
+
 }

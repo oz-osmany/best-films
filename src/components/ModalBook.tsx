@@ -4,6 +4,8 @@ import BookNow from './BookNow';
 import { Link } from 'react-router-dom';
 import { useSchedule } from '@/store/schedule';
 import { useEffect } from 'react';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 type ModalBookProps = {
   closeMod: () => void;
@@ -15,6 +17,7 @@ const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
   const { selectedFilm } = useFilms();
   const { selectedCinema } = useCinemaStore();
   const { selectTime } = useSchedule();
+  const { t} = useTranslation("movie"); 
 
   useEffect(() => {
     const select = () => {
@@ -24,8 +27,8 @@ const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
     select();
   }, []);
   return (
-    <div className="w-full h-screen bg-black">
-      <div className="flex justify-between items-center">
+    <div className="w-full h-screen bg-black border">
+      <div className="flex justify-between items-center ">
         <div className="flex items-center">
           <div className="w-[50px] h-[50px] p-[5px]">
             <img
@@ -45,7 +48,7 @@ const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
           </button>
         </div>
       </div>
-      <div className="relative w-full h-[100vh]">
+      <div className="relative w-full h-[100vh] ">
         <div className="h-[60%]">
           <img
             src={`https://image.tmdb.org/t/p/w500/${selectedFilm?.poster_path}`}
@@ -79,8 +82,7 @@ const ModalBook = ({ time, closeMod, datum }: ModalBookProps) => {
               </div>
               <div>
                 <p>
-                  Inthe Relax Seat, you'll be more comfortable! With an adjustable backrest,
-                  footstool and a table for your snacks.
+                  {t("relax")}
                 </p>
               </div>
             </div>

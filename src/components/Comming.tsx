@@ -6,6 +6,7 @@ import { Card, CardHeader } from './ui/card';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
+import { useIdiom } from '@/store/idiom';
 
 export interface InfoPeliWithTrailers extends InfoPeli {
   movieTrailers: OficialResult[];
@@ -13,11 +14,11 @@ export interface InfoPeliWithTrailers extends InfoPeli {
 const Comming = () => {
   const [movies, setMovies] = useState<InfoPeliWithTrailers[]>([]);
   const { t } = useTranslation("home"); 
-  
+  const { selectedIdiom} = useIdiom();
 
   useEffect(() => {
     const Scenes = async () => {
-      const films: InfoPeli = await Pelis();
+      const films: InfoPeli = await Pelis(2,selectedIdiom);
       const videos = Object.values(films).map(async (item) => {
         const videosRes: OficialResult[] = await Trailer(item.id);
         const now = new Date();
@@ -56,7 +57,7 @@ const Comming = () => {
         <CarouselContent className="">
           {movies?.map((item) => (
             <CarouselItem key={item.id} className="basis-1/2 md:basis-auto pl-2">
-              <Card className="w-[150px] xl:w-[200px] xl:h-[250px]">
+              <Card className="w-[150px] xl:w-[200px] xl:h-[250px] !border-0">
                 <CardHeader className="p-0">
                   <Link to={`/movies/${item.id}`}>
                     <img

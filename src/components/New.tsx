@@ -21,12 +21,12 @@ const New = () => {
     <div className="border-t-2 border-[#31292942] pt-[20px]">
       <h1 className="title mb-[20px] mt-[25px]">{t("new")}</h1>
       <div className="w-full overflow-x-auto xl:overflow-x-hidden">
-        <div className="flex gap-4 ">
-          {showing.slice(0, 4).map((item, index) => {
+        <div className="flex justify-between gap-4 ">
+          {showing.slice(0, 3).map((item, index) => {
             return (
               <div
                 key={index}
-                className="relative w-[324px] h-[324px] xl:w-[350px] xl:h-[350px] 
+                className="relative w-[324px] h-[324px] lg:w-[550px] lg:h-[500px] 
                           flex-shrink-0 bg-blue-500 text-white flex items-center justify-center rounded-lg shadow-md"
               >
                 <img

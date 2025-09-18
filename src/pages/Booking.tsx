@@ -3,6 +3,8 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Sofa } from 'lucide-react';
 import { useTicket } from '@/store/ticket';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const ROWS = 9;
 const COLS = 15;
@@ -16,6 +18,7 @@ const Booking: React.FC = () => {
   const [selected, setSelected] = useState(false);
   const [occupied, setOccupied] = useState<number[]>([35, 36]);
   const { selectSeat } = useTicket();
+  const { t } = useTranslation("movie");
 
   const cells = useMemo(() => Array.from({ length: TOTAL_SEATS }, (_, i) => i), []);
 
@@ -50,9 +53,9 @@ const Booking: React.FC = () => {
         <div className="bg-[#d8d0d042] py-2 px-4 mb-4 rounded-[7px]">Auditorium 3 4DX</div>
         <div className="flex items-center flex-col pb-4">
           <h2 className='md:text-[22px]'>
-            <strong>Select your seat(s)</strong>{' '}
+            <strong>{t("select")}</strong>{' '}
           </h2>
-          <p className="text-[12px] md:text-[15px]">{freeSeats} free seats</p>
+          <p className="text-[12px] md:text-[15px]">{freeSeats} {t("free")}</p>
         </div>
         <div className="w-full md:px-[60px] rounded-[15px] p-3 overflow-hidden border-solid border-[1px] border-gray-500">
           <div
@@ -91,8 +94,8 @@ const Booking: React.FC = () => {
           </div>
         </div>
         <div className="flex justify-around pt-2 lg:hidden">
-          <div className="btn !bg-[#d8d0d042] px-4">Pinch out to zoom</div>
-          <div className="btn !bg-[#d8d0d042] px-4">Tap to selet seat</div>
+          <div className="btn !bg-[#d8d0d042] px-4">{t("pinch")}</div>
+          <div className="btn !bg-[#d8d0d042] px-4">{t("tap")}</div>
         </div>
         <div className="content mb-4 ">
           <div className="my-2">
@@ -102,13 +105,13 @@ const Booking: React.FC = () => {
             <div className="flex flex-col lg:flex-row lg:justify-between w-full">
               <div className="flex flex-col lg:flex-row gap-4">
                 <div className="flex gap-1 mb-3">
-                  <Sofa className="text-red-500" /> My seats
+                  <Sofa className="text-red-500" /> {t("seat")}
                 </div>
                 <div className="flex gap-1 mb-3">
-                  <Sofa className="text-blue-500" /> Free seats
+                  <Sofa className="text-blue-500" /> {t("free")}
                 </div>
                 <div className="flex gap-1 mb-3">
-                  <Sofa className="text-gray-600" /> Occupied seats
+                  <Sofa className="text-gray-600" /> {t("occupied")}
                 </div>
               </div>
             </div>
@@ -118,7 +121,7 @@ const Booking: React.FC = () => {
       {/* Reserved */}
       <div className={`${selected ? 'absolute bottom-[50px] lg:bottom-0 w-full ' : 'hidden'}  `}>
         <div className="flex py-3 text-black bg-white border-t-[1px]">
-          <div className="mx-3">{reservedLabels.length} reserved seat </div>
+          <div className="mx-3">{reservedLabels.length} {t("reserved")} </div>
           <div className="flex">
             {reservedLabels?.map((item, i) => {
               return (
@@ -132,7 +135,7 @@ const Booking: React.FC = () => {
         </div>
         <Link to={`/booking/ticket/${id}`}>
           <div className="flex justify-center items-center bg-yellow-500 w-full h-[56px] lg:h-[100px] text-black">
-            <strong className='text-[18px] lg:text-[25px]'>Continue</strong>
+            <strong className='text-[18px] lg:text-[25px]'>{t("continue")}</strong>
           </div>
         </Link>
       </div>

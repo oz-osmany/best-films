@@ -3,5 +3,34 @@
     "release": "Erscheinungstag",
     "screen": "An diesem Tag findet keine Vorführung statt.",
     "noscreen": "An diesem Tag sind keine Vorführungen geplant. Sehen Sie sich den Kalender an, um Vorstellungen an einem anderen Tag zu finden.",
-    "view": "Vorführungen am Mittwoch, 13. August, ansehen"
+    "view": "Vorführungen am Mittwoch, 13. August, ansehen",
+    "relax": "Im Relax Seat sitzen Sie bequemer! Mit verstellbarer Rückenlehne, Fußstütze und einem Tisch für Ihre Snacks.",
+    "select": "Wählen Sie Ihren Sitzplatz aus",
+    "free": "freie Plätze",
+    "pinch": "Zum Zoomen zwei Finger auseinanderziehen",
+    "tap": "Zum Auswählen des Sitzplatzes antippen",
+    "myseat":"Meine Plätze",
+    "occupied": "Besetzte Plätze",
+    "reserved": "reservierter Sitzplatz",
+    "continue": "Weiter",
+    "change": "Film wechseln",
+    "rates": "Wählen Sie Ihre Tarife aus",
+    "voucher": "Gutscheine",
+    "use": "Verwenden Sie Ihre Gutscheine online, indem Sie den auf Ihrem Gutschein aufgedruckten Code (16 Zeichen) eingeben.",
+    "enter": "Geben Sie den Code ein",
+    "film": "Kinokarte Relax-Sitzplatz",
+    "transaction": "Im nächsten Schritt können Transaktionsgebühren in Höhe von 0,50 € hinzukommen.",
+    "changeseat": "Meinen Sitzplatz ändern",
+    "total": "Gesamt",
+    "seat": "Sitzplatz",
+    "myticket": "Mein Ticket",
+    "fees": "Buchungsgebühren",
+    "secure": "Sichere Zahlung",
+    "purchase":"Dies ist nur eine Kaufsimulation",
+    "goal": "Ziel erreicht",
+    "choose": "Wählen Sie eine Zahlungsmethode:"
+
+
+
+
 }

@@ -1,6 +1,7 @@
 import { useTicket } from '@/store/ticket';
 import { CircleMinus, CirclePlus } from 'lucide-react';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router-dom';
 
 const Ticket = () => {
@@ -8,6 +9,7 @@ const Ticket = () => {
   const [count, setCount] = useState<number>(0);
   const [countF, setCountF] = useState<number>(0);
   const { selectTotal, selectedSeat } = useTicket();
+  const { t } = useTranslation("movie");
 
   const setFilm = (value: number) => {
     if (value === 0) {
@@ -41,20 +43,20 @@ const Ticket = () => {
       <div className="bg-[#d8d0d042] rounded-[10px] py-2 px-4 mb-4 mx-3">Auditorium 7</div>
       <div className="w-full lg:w-[90%] mx-auto flex flex-col justify-center">
         <div className="flex items-center flex-col pb-4 lg:pb-8">
-          <h1 className="font-bold text-[24px] lg:text-[45px]">Select your rates </h1>
+          <h1 className="font-bold text-[24px] lg:text-[45px]">{t("rates")}</h1>
         </div>
         <div className="flex lg:justify-between w-full lg:h-[180px] bg-[#ffdc7d] p-4 lg:rounded-t-[10px]">
           <div className="lg:w-[60%]">
             <strong>
-              <h2 className="text-[20px] lg:text-[26px] pb-2">Vouchers</h2>
+              <h2 className="text-[20px] lg:text-[26px] pb-2">{t("voucher")}</h2>
             </strong>
             <p className="py-3 lg:text-[23px] font-normal">
-              Use your vouchers online by entering the code printed on your voucher (16 characters).
+              {t("use")}
             </p>
           </div>
           <div className="hidden lg:flex items-center">
             <button className="h-[65px] px-[35px] rounded-[10px] bg-black text-[20px] text-white">
-              Enter the code
+              {t("enter")}
             </button>
           </div>
         </div>
@@ -62,7 +64,7 @@ const Ticket = () => {
           <div className="flex justify-between p-4">
             <div className="flex flex-col md:flex-row lg:items-center w-[60%] lg:w-[80%]">
               <div className="w-[225px] md:w-[175px] lg:w-[270px]">
-                <h2 className="font-bold text-[16px] lg:text-[22px] ">Filmticket Relax Seat</h2>
+                <h2 className="font-bold text-[16px] lg:text-[22px] ">{t("film")}</h2>
               </div>
               <div className="w-0 md:w-[350px] lg:w-[90%] h-[1px] bg-gray-300"></div>
 
@@ -105,17 +107,14 @@ const Ticket = () => {
         <div className="flex justify-center mt-16">
           <p className="text-gray-500 font-medium px-[17px]">
             {' '}
-            Transaction fees of € 0,50 can be added at next step{' '}
+            {t("transaction")}{' '}
           </p>
-          <div className="absolute bottom-[11%] lg:bottom-[45%] lg:bottom-[10%] lg:right-[50px] font-medium text-gray-500 bg-[#d8d0d042] py-2 px-4 my-4 rounded-[20px]">
-            My consents
-          </div>
         </div>
       </div>
       {(countF > 0 || count > 0) && (
         <Link to={`/booking/by/${id}`}>
           <div className="fixed bottom-0 flex justify-center items-center max-w-[1440px] w-full h-[60px] lg:h-[100px] bg-[#ffc426] text-[15px] md:text-[20px] lg:text-[30px] font-bold px-[17px]">
-            Continue
+            {t("continue")}
           </div>
         </Link>
       )}

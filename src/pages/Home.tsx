@@ -27,7 +27,7 @@ const Home = () => {
         <section className="w-full h-[420px]">
           <Special />
         </section>
-        <section className="overflow-x-auto w-full h-[450px] md:h-[500px]">
+        <section className="overflow-x-auto w-full h-[450px] md:h-[500px] lg:md:h-[620px] mb-8">
           <New />
         </section>
         {/* Comming soon */}
