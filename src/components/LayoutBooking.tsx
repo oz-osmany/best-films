@@ -38,7 +38,7 @@ const LayoutBooking = () => {
       return cn('text-sm lg:text-lg font-medium transition-colors hover:text-primary text-white ');
     };
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-[884px] h-full overflow-y-auto pt-[218px]">
+    <div className="flex flex-col lg:flex-row w-full min-h-[884px] h-full overflow-y-auto pt-0">
       <aside className="h-full lg:w-[25%]">
         <div className="relative z-0 h-[400px] lg:h-[57%] w-full overflow-hidden">          
           {/* <div className="relative z-0 h-[400px] lg:h-[473px] w-full overflow-hidden"> */}
