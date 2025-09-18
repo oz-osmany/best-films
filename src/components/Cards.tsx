@@ -6,7 +6,7 @@ import { Result } from '@/types/type';
 const Cards = ({ poster_path, original_title, title, name, id }: Result) => {
   return (
     <div className="p-1">
-      <Card className="w-[150px] xl:w-[250px] xl:h-[300px] border-0">
+      <Card className="w-[150px] h:-[200px] lg:w-[200px] lg:h-[266px] border-0">
         <CardHeader className="p-0">
           <Link to={`/movies/${id}`}>
             <img

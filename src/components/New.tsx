@@ -26,7 +26,7 @@ const New = () => {
             return (
               <div
                 key={index}
-                className="relative w-[324px] h-[324px] lg:w-[550px] lg:h-[500px] 
+                className="relative w-[324px] h-[324px] lg:w-[550px] lg:h-[400px] 
                           flex-shrink-0 bg-blue-500 text-white flex items-center justify-center rounded-lg shadow-md"
               >
                 <img
