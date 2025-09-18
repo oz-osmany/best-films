@@ -26,13 +26,13 @@ const New = () => {
             return (
               <div
                 key={index}
-                className="relative w-[324px] h-[324px] lg:w-[550px] lg:h-[400px] 
+                className="group relative overflow-hidden w-[324px] h-[324px] lg:w-[550px] lg:h-[400px] 
                           flex-shrink-0 bg-blue-500 text-white flex items-center justify-center rounded-lg shadow-md"
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
                   alt=""
-                  className="w-full h-full"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out transform-gpu will-change-transform group-hover:scale-110"
                 />
                 <div className="absolute bottom-[20px] w-full p-[20px]">
                   <h2 className="mb-3 font-bold">

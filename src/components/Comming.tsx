@@ -57,13 +57,13 @@ const Comming = () => {
         <CarouselContent className="">
           {movies?.map((item) => (
             <CarouselItem key={item.id} className="basis-1/2 md:basis-auto pl-2">
-              <Card className="w-[150px] xl:w-[200px] xl:h-[250px] !border-0">
+              <Card className="group relative overflow-hidden w-[150px] xl:w-[200px] xl:h-[250px] !border-0">
                 <CardHeader className="p-0">
                   <Link to={`/movies/${item.id}`}>
                     <img
                       src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                       alt=""
-                      className="rounded-[0.75rem] w-full h-[200px] xl:h-[250px]"
+                      className="rounded-[0.75rem] w-full h-[200px] xl:h-[250px] object-cover transition-transform duration-500 ease-out transform-gpu will-change-transform group-hover:scale-110"
                     />
                   </Link>
                 </CardHeader>
