@@ -39,7 +39,7 @@ const Ticket = () => {
   };
 
   return (
-    <div className="h-[100vh] pt-3 pb-[40px] text-black rounded-t-[10px] bg-[#f8f8f8]">
+    <div className="h-full pt-3 pb-[40px] text-black rounded-t-[10px] bg-[#f8f8f8]">
       <div className="bg-[#d8d0d042] rounded-[10px] py-2 px-4 mb-4 mx-3">Auditorium 7</div>
       <div className="w-full lg:w-[90%] mx-auto flex flex-col justify-center">
         <div className="flex items-center flex-col pb-4 lg:pb-8">

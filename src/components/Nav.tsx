@@ -28,38 +28,44 @@ const Nav = () => {
       <NavigationMenu className="nav__menu w-full nav-list z-11 !max-w-full">
         <NavigationMenuList className="flex-1 justify-around w-full lg:justify-center lg:gap-8">
           <NavigationMenuItem className="flex flex-col ">
-            <Button className="bg-transparent lg:hidden">
-              <Film size={32} />
-            </Button>
-            <Link to="/" className={cn(linkClass(), 'block')}>
-              {t("movies")}
+            <Link to="/" className={cn(linkClass(), 'block pb-2 text-center')}>
+              <div>
+                <Button className="bg-transparent !pb-0 lg:hidden">
+                  <Film className='!w-[20px] !h-[20px]'/>
+                </Button>
+              </div>
+                <div>{t("movies")}</div>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col">
-            <Button className="bg-transparent lg:hidden">
-              <Pin className="w-5 h-5 mr-2" />
-            </Button>
-            <Link to="/peliculas" className={cn(linkClass(), 'block')}>
-              {t("cinema")}
+           <Link to="/peliculas" className={cn(linkClass(), 'block pb-2 text-center')}>             
+            <div>
+              <Button className="bg-transparent !pb-0 lg:hidden">
+                <Pin className='!w-[20px] !h-[20px] mr-2'  />
+              </Button>
+            </div>
+              <div>{t("cinema")}</div>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col">
-            <Button className="bg-transparent lg:hidden">
-              <Book className="w-5 h-5 mr-2" />
-            </Button>
-            <Link to="/streaming" className={cn(linkClass(), 'block')}>
+            <Link to="/streaming" className={cn(linkClass(), 'block pb-2 text-center')}>
+            <div>
+              <Button className="bg-transparent !pb-0 lg:hidden">
+                <Book className='!w-[20px] !h-[20px] mr-2' />
+              </Button>
+            </div>
               Club
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col">
-            <Button className="bg-transparent lg:hidden">
-              <Wallet className="w-5 h-5 mr-2" />
+            <Button className="bg-transparent !pb-0 lg:hidden">
+              <Wallet className="!w-[20px] !h-[20px] mr-2" />
             </Button>
             <div className="block lg:flex gap-8">
-              <Link to="/contacto" className={cn(linkClass(), 'block')}>
+              <Link to="/contacto" className={cn(linkClass(), 'block pb-2 text-center')}>
                 Wallet
               </Link>
-              <Link to="/contacto" className={cn(linkClass(), 'hidden lg:block lg:block')}>
+              <Link to="/contacto" className={cn(linkClass(), 'hidden lg:block lg:block pb-2 text-center')}>
                 {t("subscription")}
               </Link>
             </div>

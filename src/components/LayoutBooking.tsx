@@ -38,14 +38,7 @@ const LayoutBooking = () => {
       return cn('text-sm lg:text-lg font-medium transition-colors hover:text-primary text-white ');
     };
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-[884px] h-full overflow-y-auto">
-      <header className="absolute z-20 top-0 left-0 right-0 flex justify-between items-center md:bottom-full md:p-0 w-full h-[50px] lg:h-[80px]  ">
-        <div className="w-full lg:w-[60px] h-auto">
-          <div className="w-[40px] md:w-[60px] ml-[16px]">
-            <img src="/assets/branch.png" alt="branch Oz" />
-          </div>
-        </div>
-      </header>
+    <div className="flex flex-col lg:flex-row w-full min-h-[884px] h-full overflow-y-auto pt-[218px]">
       <aside className="h-full lg:w-[25%]">
         <div className="relative z-0 h-[400px] lg:h-[57%] w-full overflow-hidden">          
           {/* <div className="relative z-0 h-[400px] lg:h-[473px] w-full overflow-hidden"> */}
@@ -59,7 +52,7 @@ const LayoutBooking = () => {
             }}
           ></div>
           <div className="absolute w-full h-full bg-[#40405a57]"></div>
-          <Link to="/" className="absolute left-16 top-3 z-50 p-2 rounded-full bg-black/40 hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/60">
+          <Link to="/" className="absolute left-4 top-3 z-40 p-2 rounded-full bg-black/40 hover:bg-black/60 focus:outline-none focus:ring-2 focus:ring-white/60">
             <ArrowLeft  className=' cursor:pointer'/>
           </Link>
           <div className="banner__title flex-col">

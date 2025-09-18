@@ -20,18 +20,18 @@ const Home = () => {
         {/* Search */}
         <Search />
         {/* Now showing */}
-        <section className="w-full h-[420px]">
+        <section className="w-full h-[420px] lg:h-[520px]">
           <Now />
         </section>
         {/* Special&Events */}
-        <section className="w-full h-[420px]">
+        <section className="w-full  h-[420px] lg:h-[520px]">
           <Special />
         </section>
         <section className="overflow-x-auto w-full h-[450px] md:h-[500px] lg:md:h-[620px] mb-8">
           <New />
         </section>
         {/* Comming soon */}
-        <section className="w-full h-[420px]">
+        <section className="w-full h-[420px]  lg:h-[520px]">
           <Comming />
         </section>
         {/* Footer */}

@@ -4,12 +4,11 @@
 .content {
   @include mixins.content;
 }
-.divider::after {
-  content: '';
-  position: absolute;
+.divider {  
   height: 70px;
   width: 2px;
   background: hsla(0, 0%, 100%, 0.15);
+ 
 }
 .ticket::after {
   content: '';

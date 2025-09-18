@@ -138,7 +138,7 @@ const filteredCrew = credit?.crew.filter(
         </div>
       </div>
       <div className="separador top-[170px] lg:bottom-[-290px] lg:top-[470px]"></div>
-      <div className="relative top-[50px] md:top-[185px] lg:top-[85px]">
+      <div className="relative top-[50px] md:top-[185px] lg:top-[35%]">
         {/* Search */}
         <div className="content  mb-4">
           <Search />
